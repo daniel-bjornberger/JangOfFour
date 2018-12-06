@@ -8,7 +8,7 @@ import java.sql.*;
 public class DbHandler {
     private DbHandler DbHandlerInstance =new DbHandler();
     String searchString;
-    int pagenumber;
+    int pagenumber = 1;
     int pageAmount;
     int hitsPerpage;
     int hitAmount;
@@ -22,14 +22,14 @@ public class DbHandler {
 
     public void add(Connection connection, Contact contact)throws Exception{
         if (AddDb.callDb(connection, contact)==true){
-
+            SearchPageDb.getInstance().callDb();
         } else {
             throw new Exception("Couldn't add Contact in database");
         }
     }
     public void delete(Connection connection,Contact contact)throws Exception{
         if (DeleteDb.callDb(connection, contact)==true){
-
+            SearchPageDb.getInstance().callDb();
         }else {
             throw new Exception("Couldn't delete Contact in database");
         }
@@ -37,14 +37,14 @@ public class DbHandler {
     public void update(Connection connection,Contact contact)throws Exception{
 
         if (UpdateDb.callDb(connection, contact)==true){
-
+            SearchPageDb.getInstance().callDb();
         }else {
             throw new Exception("Couldn't update Contact in database.");
         }
     }
 
     public void searchPage(Connection connection,Contact contact)throws Exception{
-        if (SearchPageDb.callDb(/* MASSA IN HÄR!! */)==true){
+        if (SearchPageDb.getInstance().callDb(connection, searchString, pagenumber, hitsPerpage)==true){
             contactHandler.getInstance.createFromString(SearchPageDb.getInstance.Result);
         }else {
             throw new Exception("Couldn't search Contacts.");
