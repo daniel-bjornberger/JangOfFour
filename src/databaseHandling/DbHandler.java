@@ -44,10 +44,30 @@ public class DbHandler {
     }
 
     public void searchPage(Connection connection,Contact contact)throws Exception{
+        pagenumber=1;
+        if (SearchPageDb.getInstance().callDb(connection, searchString, pagenumber, hitsPerpage)==true){
+            contactHandler.getInstance.createFromString(SearchPageDb.getInstance.Result);
+            hitAmount = SearchPageDb.getInstance().getHitAmount();
+        }else {
+            throw new Exception("Couldn't search Contacts.");
+        }
+    }
+
+    public void nextPage(Connection connection, Contact contact) throws Exception{
+        pagenumber++;
         if (SearchPageDb.getInstance().callDb(connection, searchString, pagenumber, hitsPerpage)==true){
             contactHandler.getInstance.createFromString(SearchPageDb.getInstance.Result);
         }else {
             throw new Exception("Couldn't search Contacts.");
         }
     }
+    public void previousPage(Connection connection, Contact contact) throws Exception{
+        pagenumber--;
+        if (SearchPageDb.getInstance().callDb(connection, searchString, pagenumber, hitsPerpage)==true){
+            contactHandler.getInstance.createFromString(SearchPageDb.getInstance.Result);
+        }else {
+            throw new Exception("Couldn't search Contacts.");
+        }
+    }
+
 }
