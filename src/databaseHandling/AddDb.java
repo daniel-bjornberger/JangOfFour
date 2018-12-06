@@ -6,7 +6,7 @@ import java.sql.*;
 public abstract class AddDb {
 
 
-    public boolean callDb(Connection connection,Contact contact) {
+    public static boolean callDb(Connection connection,Contact contact) {
 
         Statement stm = null;
 
