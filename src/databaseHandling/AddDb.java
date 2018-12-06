@@ -8,9 +8,7 @@ public abstract class AddDb {
 
     public static boolean callDb(Connection connection,Contact contact) {
 
-        Statement stm = null;
-
-        int rowCount;
+        int rowCount = -1;
 
         String SQL = "INSERT INTO contacts(Id, firstName, lastName, phone, address, email) VALUES('" +
                 contact.getId() + "', '" + contact.getFirstName() + "', '" + contact.getLastName() + "', '" + contact.getPhone()  + "', '" +
@@ -22,7 +20,7 @@ public abstract class AddDb {
         if (connection != null) {
 
             try {
-                stm = connection.createStatement();
+                Statement stm = connection.createStatement();
 
                 rowCount = stm.executeUpdate(SQL);
 
@@ -41,7 +39,7 @@ public abstract class AddDb {
 
         }
 
-        return true;                // TODO Check how the return statement shall be written. rowCount
+        return rowCount == 1;                // TODO Check how the return statement shall be written. Is rowCount used correctly?
 
     }
 
