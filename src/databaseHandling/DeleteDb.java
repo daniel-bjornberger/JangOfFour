@@ -3,19 +3,15 @@ package databaseHandling;
 import ContactHandling.Contact;
 import java.sql.*;
 
-public abstract class AddDb {
-
+public abstract class DeleteDb {
 
     public static boolean callDb(Connection connection,Contact contact) {
 
         int rowCount = -1;
 
-        String SQL = "INSERT INTO contacts(id, firstName, lastName, phone, address, email) VALUES(" +
-                contact.getId() + ", '" + contact.getFirstName() + "', '" + contact.getLastName() + "', '" + contact.getPhone()  + "', '" +
-                contact.getAddress() + "', '" + contact.getEmail() + "')";
+        String SQL = "DELETE FROM contacts WHERE id = " + contact.getId();
 
         System.out.println(SQL);        // TODO Check of SQL statement, shall eventually be deleted.
-
 
         if (connection != null) {
 
