@@ -5,18 +5,11 @@ import ContactHandling.Contact;
 import java.sql.*;
 
 
-public class UpdateDb {
-
-    private Connection connection;
-    private Contact contact;
+public abstract class UpdateDb {
 
 
-    public UpdateDb(Connection connection, Contact contact) {
-        this.connection = connection;
-        this.contact = contact;
-    }
 
-    public boolean callDb() {
+    public static boolean callDb(Connection connection,Contact contact) {
         int rows = -1;
         if (connection != null) {
             Statement stm = null;
