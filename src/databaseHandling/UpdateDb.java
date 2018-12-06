@@ -26,6 +26,7 @@ public abstract class UpdateDb {
                 rows = stm.executeUpdate(query);
 
 
+
             } catch (SQLException sqle) {
                 System.err.println(sqle.getMessage());
             } finally {

@@ -24,23 +24,30 @@ public class DbHandler {
         if (AddDb.callDb(connection, contact)==true){
 
         } else {
-            throw new Exception("Couldn't add Contact.");
+            throw new Exception("Couldn't add Contact in database");
         }
     }
-    public void delete(Connection connection,Contact contact){
+    public void delete(Connection connection,Contact contact)throws Exception{
         if (DeleteDb.callDb(connection, contact)==true){
 
+        }else {
+            throw new Exception("Couldn't delete Contact in database");
         }
     }
-    public void update(Connection connection,Contact contact){
+    public void update(Connection connection,Contact contact)throws Exception{
+
         if (UpdateDb.callDb(connection, contact)==true){
 
+        }else {
+            throw new Exception("Couldn't update Contact in database.");
         }
     }
 
-    public void searchPage(Connection connection,Contact contact){
-        if (SearchPage.callDb(/* MASSA IN HÄR!! */)==true){
-            contacthandler.getInstance.createFromString(SearchPage.getInstance.Result);
+    public void searchPage(Connection connection,Contact contact)throws Exception{
+        if (SearchPageDb.callDb(/* MASSA IN HÄR!! */)==true){
+            contactHandler.getInstance.createFromString(SearchPageDb.getInstance.Result);
+        }else {
+            throw new Exception("Couldn't search Contacts.");
         }
     }
 }
