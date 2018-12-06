@@ -2,6 +2,7 @@ package databaseHandling;
 
 import ContactHandling.Contact;
 
+import java.nio.channels.IllegalChannelGroupException;
 import java.sql.*;
 
 public class DbHandler {
@@ -19,9 +20,11 @@ public class DbHandler {
         }
 
 
-    public void add(Connection connection, Contact contact){
+    public void add(Connection connection, Contact contact)throws Exception{
         if (AddDb.callDb(connection, contact)==true){
 
+        } else {
+            throw new Exception("Couldn't add Contact.");
         }
     }
     public void delete(Connection connection,Contact contact){
