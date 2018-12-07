@@ -2,6 +2,7 @@ package ContactHandling;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.sql.*;
 
 import java.sql.ResultSet;
 
@@ -14,11 +15,21 @@ public class ContactHandler {
         return ContactHandlerInstance;
     }
 
-    public String createFromString (ResultSet sqlResultSet) {
+    public String createFromString (ResultSet rs) throws SQLException {
         //given: SearchPageDb.getInstance.Result
         //create one or more contact from that
+        while (rs.next()){
+            System.out.println(rs.getInt(1));
+            System.out.println(rs.getString(2));
+
+
+
+            ;
+        }
+
         System.out.println("Working with: " +
                 sqlResultSet);
+        notifyListeners();
         return ("the created contact");
     }
 
@@ -32,6 +43,11 @@ public class ContactHandler {
         //remove a contact given contact
         //something like:
         // contactList.remove(givenContact);
+    }
+
+    // TODO 
+    public void notifyListeners(){
+
     }
 
 }

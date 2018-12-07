@@ -3,7 +3,7 @@ package ContactHandling;
 /* have a class that represents the contact being created or interacted with */
 public class Contact {
 
-    Integer Id;
+    int Id;
     String firstName;
     String lastName;
     String phone;
