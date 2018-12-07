@@ -15,6 +15,11 @@ public class SearchPageDb {
     private int pageNumber;
     private int hitsPerpage;
     private int hitAmount;
+    private ResultSet resultSet;
+
+    public ResultSet getResultSet(){
+        return resultSet;
+    }
 
     private SearchPageDb(){}
     public int getHitAmount(){
@@ -37,7 +42,7 @@ public class SearchPageDb {
         this.hitsPerpage=hitsPerpage;int rows = -1;
         if (connection != null) {
             Statement stm = null;
-            ResultSet resultSet = null;
+            resultSet = null;
             try {
                 String query = "SELECT * FROM contacts WHERE " +
                         "firstname LIKE '"+ searchString +"%'"+
@@ -65,7 +70,7 @@ public class SearchPageDb {
         int rows = -1;
         if (connection != null) {
             Statement stm = null;
-            ResultSet resultSet = null;
+            resultSet = null;
             try {
                 String query = "SELECT * FROM contacts WHERE " +
                         "firstname LIKE '"+ searchString +"%'"+

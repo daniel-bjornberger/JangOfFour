@@ -1,6 +1,5 @@
 package databaseHandling;
-
-import ContactHandling.Contact;
+import ContactHandling.*;
 
 import java.nio.channels.IllegalChannelGroupException;
 import java.sql.*;
@@ -46,7 +45,7 @@ public class DbHandler {
     public void searchPage(Contact contact)throws Exception{
         pagenumber=1;
         if (SearchPageDb.getInstance().callDb(DBValidator.getCon(), searchString, pagenumber, hitsPerpage)==true){
-            contactHandler.getInstance.createFromString(SearchPageDb.getInstance.Result);
+            ContactHandler.getInstance().createFromString(SearchPageDb.getInstance().getResultSet());
             hitAmount = SearchPageDb.getInstance().getHitAmount();
         }else {
             throw new Exception("Couldn't search Contacts.");
@@ -56,7 +55,7 @@ public class DbHandler {
     public void nextPage(Contact contact) throws Exception{
         pagenumber++;
         if (SearchPageDb.getInstance().callDb(DBValidator.getCon(), searchString, pagenumber, hitsPerpage)==true){
-            contactHandler.getInstance.createFromString(SearchPageDb.getInstance.Result);
+            ContactHandler.getInstance().createFromString(SearchPageDb.getInstance().getResultSet());
         }else {
             throw new Exception("Couldn't search Contacts.");
         }
@@ -64,7 +63,7 @@ public class DbHandler {
     public void previousPage(Contact contact) throws Exception{
         pagenumber--;
         if (SearchPageDb.getInstance().callDb(DBValidator.getCon(), searchString, pagenumber, hitsPerpage)==true){
-            contactHandler.getInstance.createFromString(SearchPageDb.getInstance.Result);
+            ContactHandler.getInstance().createFromString(SearchPageDb.getInstance().getResultSet());
         }else {
             throw new Exception("Couldn't search Contacts.");
         }
