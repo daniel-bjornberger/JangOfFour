@@ -7,14 +7,14 @@ import java.sql.ResultSet;
 
 public class ContactHandler {
     List<Contact> contactList = new ArrayList<>();
-    private ContactHandler ContactHandlerInstance = new ContactHandler();
+    private static ContactHandler ContactHandlerInstance = new ContactHandler();
     private ContactHandler() {}
 
-    public ContactHandler getInstance() {
+    public static ContactHandler getInstance() {
         return ContactHandlerInstance;
     }
 
-    public String createFromString (java.sql.ResultSet sqlResultSet) {
+    public String createFromString (ResultSet sqlResultSet) {
         //given: SearchPageDb.getInstance.Result
         //create one or more contact from that
         System.out.println("Working with: " +
@@ -28,7 +28,7 @@ public class ContactHandler {
         contactList.add(new Contact(givenContact));
     }
 
-    public void clear (Contact givenContact) {
+    public void clear (ContactHandling.Contact givenContact) {
         //remove a contact given contact
         //something like:
         // contactList.remove(givenContact);
