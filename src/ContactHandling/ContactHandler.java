@@ -28,24 +28,25 @@ public class ContactHandler {
         }
 
         System.out.println("Working with: " +
-                sqlResultSet);
+                rs);
         notifyListeners();
         return ("the created contact");
     }
 
-    public void add (ContactHandling.Contact givenContact) {
+    public void add (Contact givenContact) {
         //add a given contact detail to contactList
         //has an error , fix:
-        contactList.add(new Contact(givenContact));
+        contactList.add(givenContact);
     }
 
     public void clear (ContactHandling.Contact givenContact) {
         //remove a contact given contact
+
         //something like:
         // contactList.remove(givenContact);
     }
 
-    // TODO 
+    // TODO
     public void notifyListeners(){
 
     }

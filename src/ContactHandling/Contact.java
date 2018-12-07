@@ -3,7 +3,7 @@ package ContactHandling;
 /* have a class that represents the contact being created or interacted with */
 public class Contact {
 
-    int Id;
+    int id;
     String firstName;
     String lastName;
     String phone;
@@ -12,10 +12,11 @@ public class Contact {
 
 
     //Constructor
-    public void Contact (String givenFirstName, String givenLastName,
+    public Contact (int id,String givenFirstName, String givenLastName,
                          String givenPhone, String givenAddress,
                          String givenEmail) {
 
+        this.id=id;
         this.firstName = givenFirstName;
         this.lastName = givenLastName;
         this.phone = givenPhone;
@@ -24,11 +25,11 @@ public class Contact {
     }
 
     public Integer getId() {
-        return Id;
+        return id;
     }
 
     public void setId(Integer id) {
-        Id = id;
+        id = id;
     }
 
     public String getFirstName() {
@@ -74,7 +75,7 @@ public class Contact {
     @Override
     public String toString() {
         return (
-                "Id: " + Id +
+                "Id: " + id +
                         "First name: " + firstName + ", " +
                         "Last name: " + lastName + ", " +
                         "Phone: " + phone + ", " +
