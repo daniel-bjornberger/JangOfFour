@@ -41,11 +41,11 @@ public class SearchPageDb {
             try {
                 String query = "SELECT * FROM contacts WHERE " +
                         "firstname LIKE '"+ searchString +"%'"+
-                        ",surname LIKE '"+ searchString +"%'"+
-                        ",phone LIKE '"+ searchString +"%'"+
-                        ",adress LIKE '"+ searchString +"%'"+
-                        ",email LIKE '"+ searchString +"%'"+
-                        " WHERE LIKE '"+ searchString +"%'"+
+                        "OR surname LIKE '"+ searchString +"%'"+
+                        "OR phone LIKE '"+ searchString +"%'"+
+                        "OR adress LIKE '"+ searchString +"%'"+
+                        "OR email LIKE '"+ searchString +"%'"+
+                        "OR WHERE LIKE '"+ searchString +"%'"+
                         ";";
                 System.out.println(query); // Säkra att du skrivit rätt, tas bort senare.
                 stm = connection.createStatement();
