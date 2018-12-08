@@ -15,7 +15,7 @@ public abstract class UpdateDb {
             Statement stm = null;
 
             try {
-                String query = "UPDATE contacts SET firstname='"+contact.getFirstname()+
+                String query = "UPDATE contacts SET firstname='"+contact.getFirstname() +
                         "',lastname='"+contact.getLastname()+
                         "',phone='"+contact.getPhone()+
                         "',address='"+contact.getAddress()+
