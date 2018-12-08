@@ -15,12 +15,12 @@ public abstract class UpdateDb {
             Statement stm = null;
 
             try {
-                String query = "UPDATE contacs SET firstname="+contact.getFirstName()+
-                        ",lastname="+contact.getLastName()+
-                        ",phone="+contact.getPhone()+
-                        ",adress="+contact.getAddress()+
-                        ",email="+contact.getEmail()+
-                        " WHERE id="+contact.getId()+";";
+                String query = "UPDATE contacts SET firstname='"+contact.getFirstname()+
+                        "',lastname='"+contact.getLastname()+
+                        "',phone='"+contact.getPhone()+
+                        "',address='"+contact.getAddress()+
+                        "',email='"+contact.getEmail()+
+                        "' WHERE id="+contact.getId()+";";
                 System.out.println(query); // Säkra att du skrivit rätt, tas bort senare.
                 stm = connection.createStatement();
                 rows = stm.executeUpdate(query);

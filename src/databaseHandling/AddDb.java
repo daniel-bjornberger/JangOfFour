@@ -10,8 +10,8 @@ public abstract class AddDb {
 
         int rowCount = -1;
 
-        String SQL = "INSERT INTO contacts(id, firstName, lastName, phone, address, email) VALUES(" +
-                contact.getId() + ", '" + contact.getFirstName() + "', '" + contact.getLastName() + "', '" + contact.getPhone()  + "', '" +
+        String SQL = "INSERT INTO contacts(id, firstname, lastname, phone, address, email) VALUES(" +
+                contact.getId() + ", '" + contact.getFirstname() + "', '" + contact.getLastname() + "', '" + contact.getPhone()  + "', '" +
                 contact.getAddress() + "', '" + contact.getEmail() + "')";
 
         System.out.println(SQL);        // TODO Check of SQL statement, shall eventually be deleted.

@@ -4,8 +4,8 @@ package ContactHandling;
 public class Contact {
 
     int id;
-    String firstName;
-    String lastName;
+    String firstname;
+    String lastname;
     String phone;
     String address;
     String email;
@@ -17,8 +17,8 @@ public class Contact {
                          String givenEmail) {
 
         this.id=id;
-        this.firstName = givenFirstName;
-        this.lastName = givenLastName;
+        this.firstname = givenFirstName;
+        this.lastname = givenLastName;
         this.phone = givenPhone;
         this.address = givenAddress;
         this.email = givenEmail;
@@ -32,20 +32,20 @@ public class Contact {
         id = id;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getFirstname() {
+        return firstname;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setFirstname(String firstName) {
+        this.firstname = firstName;
     }
 
-    public String getLastName() {
-        return lastName;
+    public String getLastname() {
+        return lastname;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setLastname(String lastName) {
+        this.lastname = lastName;
     }
 
     public String getPhone() {
@@ -76,8 +76,8 @@ public class Contact {
     public String toString() {
         return (
                 "Id: " + id +
-                        "First name: " + firstName + ", " +
-                        "Last name: " + lastName + ", " +
+                        "First name: " + firstname + ", " +
+                        "Last name: " + lastname + ", " +
                         "Phone: " + phone + ", " +
                         "Address: " + address + ", " +
                         "Email: " + email
