@@ -7,17 +7,27 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class Main extends Application {
+    
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
-        primaryStage.setTitle("Hello World");
-        primaryStage.setScene(new Scene(root, 300, 275));
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("ListOfContactsView.fxml"));
+        Parent root = loader.load();
+
+        ListOfContactsController listOfContactsController = loader.getController();
+        listOfContactsController.init();
+        listOfContactsController.setStage(primaryStage);
+
+        primaryStage.setTitle("Drawing shapes");
+        primaryStage.setScene(new Scene(root));
         primaryStage.show();
+
     }
 
 
     public static void main(String[] args) {
         launch(args);
     }
+
 }
