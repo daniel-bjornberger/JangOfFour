@@ -16,8 +16,8 @@ public class Main extends Application {
         Parent root = loader.load();
 
         ListOfContactsController listOfContactsController = loader.getController();
-        listOfContactsController.init();
-        listOfContactsController.setStage(primaryStage);
+        //listOfContactsController.init();
+        //listOfContactsController.setStage(primaryStage);
 
         primaryStage.setTitle("Drawing shapes");
         primaryStage.setScene(new Scene(root));

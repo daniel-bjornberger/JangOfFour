@@ -32,7 +32,7 @@ public class Main{
             System.out.println("2. on the way...");
             //ResultSet resultSet = SearchPageDb.getInstance().getResultSet();
             System.out.println(
-            SearchPageDb.getInstance().callDb(getCon,"Joel",1,10)
+            SearchPageDb.getInstance().callDb(getCon,"01",1,10)
             );
             System.out.println("3. on the way...");
             //System.out.println(resultSet);

@@ -1,6 +1,7 @@
 package databaseHandling;
 
 import ContactHandling.Contact;
+import ContactHandling.ContactHandler;
 import com.sun.corba.se.impl.encoding.CodeSetComponentInfo;
 
 import java.sql.Connection;
@@ -86,7 +87,17 @@ public class SearchPageDb {
                 stm = connection.createStatement();
                 resultSet = stm.executeQuery(query);
                 System.out.println("resultSet: " + resultSet);
+                ContactHandler.getInstance().createFromString(resultSet);
 
+                //row count. will not work since rs.next is done in createFromString.
+                // instead do a count, as in:
+                //https://stackoverflow.com/questions/192078/how-do-i-get-the-size-of-a-java-sql-resultset
+                /* while (resultSet.next()) {
+                    rows ++;
+                }
+                rows += 1; //+1 because count of rows starts at 0
+                System.out.println("# of rows: " + rows);
+                */
 
             } catch (SQLException sqle) {
                 System.err.println(sqle.getMessage());

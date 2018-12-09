@@ -70,7 +70,9 @@ public class DbHandler {
     }
 
     public static void main (String[] args) {
-        if (SearchPageDb.getInstance().callDb(DBValidator.getCon(), "Joel", 1,10 )) {
+        System.out.println("in order to access resultSet...");
+        //if (SearchPageDb.getInstance().callDb(DBValidator.getCon(), "Joel", 1,10 )) {
+        if (SearchPageDb.getInstance().callDb(DBValidator.getCon(), "01", 1,10 )) {
             try {
                 ContactHandler.getInstance().createFromString(SearchPageDb.getInstance().getResultSet());
             } catch (SQLException e) {
