@@ -16,6 +16,7 @@ public class ContactHandler {
     }
 
     public String createFromString (ResultSet rs) throws SQLException {
+        System.out.println("createFromString...");
         //given: SearchPageDb.getInstance.Result
         //create one or more contact from that
         while (rs.next()){

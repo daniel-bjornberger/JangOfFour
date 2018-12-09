@@ -35,22 +35,22 @@ public class SearchPageDb {
                           int pageNumber,
                           int hitsPerpage){
 
-
         this.connection=connection;
         this.searchString=searchString;
         this.pageNumber=pageNumber;
         this.hitsPerpage=hitsPerpage;int rows = -1;
+        System.out.println("connection: " + connection);
         if (connection != null) {
+
             Statement stm = null;
             resultSet = null;
             try {
                 String query = "SELECT * FROM contacts WHERE " +
                         "firstname LIKE '"+ searchString +"%'"+
-                        "OR surname LIKE '"+ searchString +"%'"+
-                        "OR phone LIKE '"+ searchString +"%'"+
-                        "OR adress LIKE '"+ searchString +"%'"+
-                        "OR email LIKE '"+ searchString +"%'"+
-                        "OR WHERE LIKE '"+ searchString +"%'"+
+                        " OR lastname LIKE '"+ searchString +"%'"+
+                        " OR phone LIKE '"+ searchString +"%'"+
+                        " OR address LIKE '"+ searchString +"%'"+
+                        " OR email LIKE '"+ searchString +"%'"+
                         ";";
                 System.out.println(query); // Säkra att du skrivit rätt, tas bort senare.
                 stm = connection.createStatement();
@@ -73,19 +73,19 @@ public class SearchPageDb {
             resultSet = null;
             try {
                 String query = "SELECT * FROM contacts WHERE " +
-                        "firstname LIKE '"+ searchString +"%'"+
-                        ",surname LIKE '"+ searchString +"%'"+
-                        ",phone LIKE '"+ searchString +"%'"+
-                        ",adress LIKE '"+ searchString +"%'"+
-                        ",email LIKE '"+ searchString +"%'"+
-                        " WHERE LIKE '"+ searchString +"%'"+
-                        "ORDER BY firstname" +
-                        "OFFSET " + ((pageNumber-1)*hitsPerpage) + " ROWS" +
-                        "LIMIT " + hitsPerpage +
+                        "firstname LIKE '"+ searchString +"%' OR "+
+                        "lastname LIKE '"+ searchString +"%' OR "+
+                        "phone LIKE '"+ searchString +"%' OR "+
+                        "address LIKE '"+ searchString +"%' OR "+
+                        "email LIKE '"+ searchString +"%' "+
+                        "ORDER BY firstname " +
+                        "LIMIT " + hitsPerpage + " " +
+                        "OFFSET " + ((pageNumber-1)*hitsPerpage) + //check if this formular is right
                         ";";
                 System.out.println(query); // Säkra att du skrivit rätt, tas bort senare.
                 stm = connection.createStatement();
                 resultSet = stm.executeQuery(query);
+                System.out.println("resultSet: " + resultSet);
 
 
             } catch (SQLException sqle) {

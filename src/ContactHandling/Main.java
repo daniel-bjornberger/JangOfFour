@@ -1,10 +1,8 @@
 package ContactHandling;
 
-import databaseHandling.AddDb;
-import databaseHandling.DBValidator;
-import databaseHandling.DeleteDb;
-import databaseHandling.UpdateDb;
+import databaseHandling.*;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,6 +18,21 @@ public class Main{
         UpdateDb.callDb(DBValidator.getCon(), updatedContact);
 
         //DeleteDb.callDb(DBValidator.getCon(), c);
+
+        //ContactHandler.getInstance().createFromString()
+        //new DbHandler.searchPage(c)
+
+        java.sql.Connection getCon = DBValidator.getCon();
+        System.out.println("getCon: " + getCon);
+        //SearchPageDb.getInstance().callDb(getCon,"Joel",1,10);
+        if (SearchPageDb.getInstance().callDb(getCon, "Joel", 1,10 )) {
+            try {
+                ContactHandler.getInstance().createFromString(SearchPageDb.getInstance().getResultSet());
+            } catch (SQLException e) {
+                System.err.println(e);
+            };
+        }
+
     }
 
 
