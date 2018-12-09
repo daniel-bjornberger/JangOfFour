@@ -56,6 +56,14 @@ public class SearchPageDb {
                 System.out.println(query); // Säkra att du skrivit rätt, tas bort senare.
                 stm = connection.createStatement();
                 resultSet = stm.executeQuery(query);
+
+                System.out.println("- now in callDb(Connection connection,\n" +
+                        "                          String searchString,\n" +
+                        "                          int pageNumber,\n" +
+                        "                          int hitsPerpage).\n\n" +
+                        " resultSet: " + resultSet);
+                ContactHandler.getInstance().createFromString(resultSet);
+
                 //TODO: KOLLA OM DENNA FUNGERAR
                 hitAmount = resultSet.getFetchSize();
 
@@ -86,7 +94,7 @@ public class SearchPageDb {
                 System.out.println(query); // Säkra att du skrivit rätt, tas bort senare.
                 stm = connection.createStatement();
                 resultSet = stm.executeQuery(query);
-                System.out.println("resultSet: " + resultSet);
+                System.out.println("- now in callDb(). resultSet: " + resultSet);
                 ContactHandler.getInstance().createFromString(resultSet);
 
                 //row count. will not work since rs.next is done in createFromString.
