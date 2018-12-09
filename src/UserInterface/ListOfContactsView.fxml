@@ -72,6 +72,7 @@
                   <TableColumn prefWidth="200.0" text="Email" />
               </columns>
             </TableView>
+            <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="244.0" />
          </children>
       </HBox>
       <HBox layoutX="14.0" layoutY="750.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="1506.0">
