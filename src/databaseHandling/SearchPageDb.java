@@ -39,7 +39,7 @@ public class SearchPageDb {
         this.searchString=searchString;
         this.pageNumber=pageNumber;
         this.hitsPerpage=hitsPerpage;int rows = -1;
-        System.out.println("connection: " + connection);
+
         if (connection != null) {
 
             Statement stm = null;
