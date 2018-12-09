@@ -7,7 +7,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class Main extends Application {
-    
+
 
     @Override
     public void start(Stage primaryStage) throws Exception{
@@ -19,7 +19,7 @@ public class Main extends Application {
         listOfContactsController.init();
         listOfContactsController.setStage(primaryStage);
 
-        primaryStage.setTitle("Drawing shapes");
+        primaryStage.setTitle("Jang Of Four Contact List");
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
 
