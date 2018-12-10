@@ -5,6 +5,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
@@ -12,7 +13,7 @@
    <children>
       <VBox layoutX="618.0" layoutY="100.0" prefHeight="834.0" prefWidth="600.0">
          <children>
-            <Label text="Label - Add or Update">
+            <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="22.0" prefWidth="300.0" text="Label - Add or Update">
                <font>
                   <Font name="Impact" size="18.0" />
                </font>
@@ -96,14 +97,29 @@
                   <Insets top="15.0" />
                </VBox.margin>
             </TextField>
-            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="34.0" prefWidth="80.0" text="Ok">
-               <font>
-                  <Font name="Impact" size="18.0" />
-               </font>
+            <HBox prefHeight="100.0" prefWidth="200.0">
                <VBox.margin>
-                  <Insets left="110.0" top="30.0" />
+                  <Insets top="30.0" />
                </VBox.margin>
-            </Button>
+               <children>
+                  <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="34.0" prefWidth="80.0" text="Ok">
+                     <font>
+                        <Font name="Impact" size="18.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="40.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="34.0" prefWidth="80.0" text="Cancel">
+                     <font>
+                        <Font name="Impact" size="18.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="60.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
          </children>
       </VBox>
    </children>
