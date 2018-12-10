@@ -23,13 +23,14 @@ public class ContactHandler {
         System.out.println("see current contactsList. It is: " +
                 contactList);
 
-        System.out.println("Work with: " + rs);
-
         //remove all contacts from Contact List first
         contactList.clear();
 
+        System.out.println("Work with ResultSet: " + rs);
+        System.out.println("is there an rs.next()? " + rs.next());
+
         while (rs.next()) {
-            //System.out.println("each row");
+            System.out.println("going through each row...");
             //System.out.println(rs.getInt(1));
             //System.out.println(rs.getString(2));
             contactList.add(new Contact(
@@ -44,18 +45,18 @@ public class ContactHandler {
             ;
         }
 
-        System.out.println("finish adding all contacts to contactList");
+        System.out.println("check if contactList is ready...");
         //System.out.println("now it is: " + contactList);
-        displayAllContacts(contactList);
+        displayAllContacts();
         notifyListeners();
         return (contactList);
     }
     /**
      * display all contacts currently in contactList
      */
-    public void displayAllContacts (List<Contact> givenContactList) {
+    public void displayAllContacts () {
         int count = 0;
-        for (Contact contact: givenContactList) {
+        for (Contact contact: contactList) {
             System.out.println("Contact " + count + ": " + contact);
             count++;
         }
