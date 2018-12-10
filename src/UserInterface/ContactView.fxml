@@ -25,7 +25,7 @@
                <VBox.margin>
                   <Insets top="30.0" />
                </VBox.margin></Label>
-            <TextField maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="34.0" prefWidth="300.0">
+            <TextField fx:id="firstNameField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="34.0" prefWidth="300.0">
                <font>
                   <Font name="Impact" size="18.0" />
                </font>
@@ -41,7 +41,7 @@
                   <Insets top="30.0" />
                </VBox.margin>
             </Label>
-            <TextField layoutX="10.0" layoutY="84.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="34.0" prefWidth="300.0">
+            <TextField fx:id="lastNameField" layoutX="10.0" layoutY="84.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="34.0" prefWidth="300.0">
                <font>
                   <Font name="Impact" size="18.0" />
                </font>
@@ -57,7 +57,7 @@
                   <Insets top="30.0" />
                </VBox.margin>
             </Label>
-            <TextField layoutX="10.0" layoutY="84.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="34.0" prefWidth="300.0">
+            <TextField fx:id="phoneField" layoutX="10.0" layoutY="84.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="34.0" prefWidth="300.0">
                <font>
                   <Font name="Impact" size="18.0" />
                </font>
@@ -73,7 +73,7 @@
                   <Insets top="30.0" />
                </VBox.margin>
             </Label>
-            <TextField layoutX="10.0" layoutY="170.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="34.0" prefWidth="300.0">
+            <TextField fx:id="addressField" layoutX="10.0" layoutY="170.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="34.0" prefWidth="300.0">
                <font>
                   <Font name="Impact" size="18.0" />
                </font>
@@ -89,7 +89,7 @@
                   <Insets top="30.0" />
                </VBox.margin>
             </Label>
-            <TextField layoutX="10.0" layoutY="342.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="34.0" prefWidth="300.0">
+            <TextField fx:id="emailField" layoutX="10.0" layoutY="342.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="34.0" prefWidth="300.0">
                <font>
                   <Font name="Impact" size="18.0" />
                </font>
@@ -102,7 +102,7 @@
                   <Insets top="30.0" />
                </VBox.margin>
                <children>
-                  <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="34.0" prefWidth="80.0" text="Ok">
+                  <Button fx:id="okButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="34.0" prefWidth="80.0" text="Ok">
                      <font>
                         <Font name="Impact" size="18.0" />
                      </font>
@@ -110,7 +110,7 @@
                         <Insets left="40.0" />
                      </HBox.margin>
                   </Button>
-                  <Button layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="34.0" prefWidth="80.0" text="Cancel">
+                  <Button fx:id="cancelButton" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="34.0" prefWidth="80.0" text="Cancel">
                      <font>
                         <Font name="Impact" size="18.0" />
                      </font>

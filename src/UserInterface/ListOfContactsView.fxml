@@ -26,7 +26,7 @@
                         <Insets left="170.0" />
                      </VBox.margin>
                   </Label>
-                  <TextField maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="34.0" prefWidth="440.0">
+                  <TextField fx:id="searchField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="34.0" prefWidth="440.0">
                      <font>
                         <Font name="Impact" size="18.0" />
                      </font>
@@ -36,7 +36,7 @@
                   </TextField>
                </children>
             </VBox>
-            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="34.0" prefWidth="77.0" text="Search">
+            <Button fx:id="searchButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="34.0" prefWidth="77.0" text="Search">
                <font>
                   <Font name="Impact" size="18.0" />
                </font>
@@ -44,7 +44,7 @@
                   <Insets left="20.0" top="33.0" />
                </HBox.margin>
             </Button>
-            <Button mnemonicParsing="false" text="List all contacts">
+            <Button fx:id="listAllContactsButton" mnemonicParsing="false" text="List all contacts">
                <font>
                   <Font name="Impact" size="18.0" />
                </font>
@@ -52,7 +52,7 @@
                   <Insets left="60.0" top="33.0" />
                </HBox.margin>
             </Button>
-            <Button mnemonicParsing="false" text="Add new contact">
+            <Button fx:id="addNewContactButton" mnemonicParsing="false" text="Add new contact">
                <font>
                   <Font name="Impact" size="18.0" />
                </font>
@@ -63,13 +63,13 @@
          </children></HBox>
       <HBox layoutX="14.0" layoutY="150.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1508.0">
          <children>
-            <TableView maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="580.0" prefWidth="1200.0" stylesheets="@style.css">
+            <TableView fx:id="tableView" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="580.0" prefWidth="1200.0" stylesheets="@style.css">
               <columns>
-                <TableColumn prefWidth="200.0" text="First name" />
-                <TableColumn prefWidth="200.0" text="Last name" />
-                  <TableColumn prefWidth="200.0" text="Phone" />
-                  <TableColumn prefWidth="200.0" text="Address" />
-                  <TableColumn prefWidth="200.0" text="Email" />
+                <TableColumn fx:id="firstNameColumn" prefWidth="200.0" text="First name" />
+                <TableColumn fx:id="lastNameColumn" prefWidth="200.0" text="Last name" />
+                  <TableColumn fx:id="phoneColumn" prefWidth="200.0" text="Phone" />
+                  <TableColumn fx:id="addressColumn" prefWidth="200.0" text="Address" />
+                  <TableColumn fx:id="emailColumn" prefWidth="200.0" text="Email" />
               </columns>
             </TableView>
             <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="244.0" />
@@ -77,7 +77,7 @@
       </HBox>
       <HBox layoutX="14.0" layoutY="750.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="1506.0">
          <children>
-            <Pagination prefHeight="100.0" prefWidth="400.0">
+            <Pagination fx:id="pagination" prefHeight="100.0" prefWidth="400.0">
                <HBox.margin>
                   <Insets left="400.0" />
                </HBox.margin>
