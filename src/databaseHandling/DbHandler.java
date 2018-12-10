@@ -5,16 +5,24 @@ import java.nio.channels.IllegalChannelGroupException;
 import java.sql.*;
 
 public class DbHandler {
-    private DbHandler DbHandlerInstance =new DbHandler();
-    String searchString;
-    int pagenumber = 1;
-    int pageAmount;
-    int hitsPerpage;
-    int hitAmount;
+    private static DbHandler DbHandlerInstance =new DbHandler();
+    private String searchString;
+    private int pagenumber = 1;
+    private int pageAmount;
+    private int hitsPerpage;
+    private int hitAmount;
 
     private DbHandler(){}
 
-    public DbHandler getInstance(){
+    public int getPageAmount(){
+        if (hitsPerpage%hitsPerpage <0){
+        return (hitAmount/hitsPerpage +1);
+        }else{
+            return hitAmount/hitsPerpage;
+        }
+    }
+
+    public static DbHandler getInstance(){
         return DbHandlerInstance;
         }
 
@@ -42,7 +50,8 @@ public class DbHandler {
         }
     }
 
-    public void searchPage(Contact contact)throws Exception{
+    public void searchPage(String searchString)throws Exception{
+        this.searchString = searchString;
         pagenumber=1;
         if (SearchPageDb.getInstance().callDb(DBValidator.getCon(), searchString, pagenumber, hitsPerpage)==true){
             ContactHandler.getInstance().createFromString(SearchPageDb.getInstance().getResultSet());
@@ -69,16 +78,5 @@ public class DbHandler {
         }
     }
 
-    public static void main (String[] args) {
-        System.out.println("in order to access resultSet...");
-        //if (SearchPageDb.getInstance().callDb(DBValidator.getCon(), "Joel", 1,10 )) {
-        if (SearchPageDb.getInstance().callDb(DBValidator.getCon(), "01", 1,10 )) {
-            try {
-                ContactHandler.getInstance().createFromString(SearchPageDb.getInstance().getResultSet());
-            } catch (SQLException e) {
-                System.err.println(e);
-            };
-        }
-    }
 
 }

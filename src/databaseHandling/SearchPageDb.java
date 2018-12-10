@@ -62,7 +62,7 @@ public class SearchPageDb {
                         "                          int pageNumber,\n" +
                         "                          int hitsPerpage).\n\n" +
                         " resultSet: " + resultSet);
-                ContactHandler.getInstance().createFromString(resultSet);
+
 
                 //TODO: KOLLA OM DENNA FUNGERAR
                 hitAmount = resultSet.getFetchSize();
@@ -95,7 +95,6 @@ public class SearchPageDb {
                 stm = connection.createStatement();
                 resultSet = stm.executeQuery(query);
                 System.out.println("- now in callDb(). resultSet: " + resultSet);
-                ContactHandler.getInstance().createFromString(resultSet);
 
                 //row count. will not work since rs.next is done in createFromString.
                 // instead do a count, as in:

@@ -7,7 +7,7 @@ import java.sql.*;
 import java.sql.ResultSet;
 
 public class ContactHandler {
-    List<Contact> contactList = new ArrayList<>();
+    private List<Contact> contactList = new ArrayList<>();
     private static ContactHandler ContactHandlerInstance = new ContactHandler();
     private ContactHandler() {}
 
@@ -17,6 +17,7 @@ public class ContactHandler {
 
     public List<Contact> createFromString (ResultSet rs) throws SQLException {
         System.out.println("createFromString...");
+        ResultSet myResultSet= rs;
         //given: SearchPageDb.getInstance.Result
         //create one or more contact from that
         System.out.println("see current contactsList. It is: " +

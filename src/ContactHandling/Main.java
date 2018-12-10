@@ -31,9 +31,10 @@ public class Main{
         try {
             System.out.println("2. on the way...");
             //ResultSet resultSet = SearchPageDb.getInstance().getResultSet();
-            System.out.println(
-            SearchPageDb.getInstance().callDb(getCon,"01",1,10)
-            );
+
+                    DbHandler.getInstance().searchPage("Joel");
+            //SearchPageDb.getInstance().callDb(getCon,"01",1,10)
+
             System.out.println("3. on the way...");
             //System.out.println(resultSet);
             //ContactHandler.getInstance().createFromString(SearchPageDb.getInstance().getResultSet());
