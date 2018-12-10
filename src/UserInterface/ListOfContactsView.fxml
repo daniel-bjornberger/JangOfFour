@@ -12,72 +12,277 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="864.0" prefWidth="1536.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="864.0" prefWidth="1536.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UserInterface.ListOfContactsController">
    <children>
-      <HBox layoutX="14.0" layoutY="14.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="1508.0">
+      <HBox layoutX="14.0" layoutY="44.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="1508.0">
          <children>
             <VBox prefHeight="100.0" prefWidth="440.0">
                <children>
-                  <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="100.0" text="Search field:">
+                  <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="166.0" text="Search field:">
                      <font>
-                        <Font name="Impact" size="18.0" />
+                        <Font name="Impact" size="24.0" />
                      </font>
                      <VBox.margin>
-                        <Insets left="170.0" />
+                        <Insets left="137.0" />
                      </VBox.margin>
                   </Label>
-                  <TextField fx:id="searchField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="34.0" prefWidth="440.0">
+                  <TextField fx:id="searchField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="45.0" prefWidth="440.0">
                      <font>
-                        <Font name="Impact" size="18.0" />
+                        <Font name="Impact" size="24.0" />
                      </font>
                      <VBox.margin>
-                        <Insets top="3.0" />
+                        <Insets top="10.0" />
                      </VBox.margin>
                   </TextField>
                </children>
             </VBox>
-            <Button fx:id="searchButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="34.0" prefWidth="77.0" text="Search">
+            <Button fx:id="searchButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="45.0" prefWidth="120.0" text="Search">
                <font>
-                  <Font name="Impact" size="18.0" />
+                  <Font name="Impact" size="24.0" />
                </font>
                <HBox.margin>
-                  <Insets left="20.0" top="33.0" />
+                  <Insets left="20.0" top="40.0" />
                </HBox.margin>
             </Button>
-            <Button fx:id="listAllContactsButton" mnemonicParsing="false" text="List all contacts">
+            <Button fx:id="listAllContactsButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="45.0" prefWidth="200.0" text="List all contacts">
                <font>
-                  <Font name="Impact" size="18.0" />
+                  <Font name="Impact" size="24.0" />
                </font>
                <HBox.margin>
-                  <Insets left="60.0" top="33.0" />
+                  <Insets left="60.0" top="40.0" />
                </HBox.margin>
             </Button>
-            <Button fx:id="addNewContactButton" mnemonicParsing="false" text="Add new contact">
+            <Button fx:id="addNewContactButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="45.0" prefWidth="200.0" text="Add new contact">
                <font>
-                  <Font name="Impact" size="18.0" />
+                  <Font name="Impact" size="24.0" />
                </font>
                <HBox.margin>
-                  <Insets left="60.0" top="33.0" />
+                  <Insets left="60.0" top="40.0" />
                </HBox.margin>
             </Button>
          </children></HBox>
-      <HBox layoutX="14.0" layoutY="150.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1508.0">
+      <HBox layoutX="14.0" layoutY="200.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="547.0" prefWidth="1508.0">
          <children>
-            <TableView fx:id="tableView" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="580.0" prefWidth="1200.0" stylesheets="@style.css">
+            <TableView fx:id="tableView" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="1310.0" stylesheets="@style.css">
               <columns>
-                <TableColumn fx:id="firstNameColumn" prefWidth="200.0" text="First name" />
-                <TableColumn fx:id="lastNameColumn" prefWidth="200.0" text="Last name" />
+                <TableColumn fx:id="firstNameColumn" prefWidth="180.0" text="First name" />
+                <TableColumn fx:id="lastNameColumn" prefWidth="180.0" text="Last name" />
                   <TableColumn fx:id="phoneColumn" prefWidth="200.0" text="Phone" />
-                  <TableColumn fx:id="addressColumn" prefWidth="200.0" text="Address" />
-                  <TableColumn fx:id="emailColumn" prefWidth="200.0" text="Email" />
+                  <TableColumn fx:id="addressColumn" prefWidth="330.0" text="Address" />
+                  <TableColumn fx:id="emailColumn" prefWidth="400.0" text="Email" />
               </columns>
             </TableView>
-            <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="244.0" />
+            <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="200.0">
+               <HBox.margin>
+                  <Insets top="49.0" />
+               </HBox.margin>
+               <children>
+                  <HBox prefHeight="45.0" prefWidth="200.0">
+                     <children>
+                        <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="78.0" text="Update">
+                           <font>
+                              <Font name="Impact" size="18.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="20.0" top="5.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="78.0" text="Delete">
+                           <HBox.margin>
+                              <Insets left="20.0" top="5.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="Impact" size="18.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="10.0" layoutY="10.0" prefHeight="45.0" prefWidth="200.0">
+                     <children>
+                        <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="78.0" text="Update">
+                           <font>
+                              <Font name="Impact" size="18.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="20.0" top="5.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="78.0" text="Delete">
+                           <HBox.margin>
+                              <Insets left="20.0" top="5.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="Impact" size="18.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="10.0" layoutY="55.0" prefHeight="45.0" prefWidth="200.0">
+                     <children>
+                        <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="78.0" text="Update">
+                           <font>
+                              <Font name="Impact" size="18.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="20.0" top="5.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="78.0" text="Delete">
+                           <HBox.margin>
+                              <Insets left="20.0" top="5.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="Impact" size="18.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="10.0" layoutY="100.0" prefHeight="45.0" prefWidth="200.0">
+                     <children>
+                        <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="78.0" text="Update">
+                           <font>
+                              <Font name="Impact" size="18.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="20.0" top="5.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="78.0" text="Delete">
+                           <HBox.margin>
+                              <Insets left="20.0" top="5.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="Impact" size="18.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="10.0" layoutY="145.0" prefHeight="45.0" prefWidth="200.0">
+                     <children>
+                        <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="78.0" text="Update">
+                           <font>
+                              <Font name="Impact" size="18.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="20.0" top="5.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="78.0" text="Delete">
+                           <HBox.margin>
+                              <Insets left="20.0" top="5.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="Impact" size="18.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="10.0" layoutY="190.0" prefHeight="45.0" prefWidth="200.0">
+                     <children>
+                        <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="78.0" text="Update">
+                           <font>
+                              <Font name="Impact" size="18.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="20.0" top="5.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="78.0" text="Delete">
+                           <HBox.margin>
+                              <Insets left="20.0" top="5.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="Impact" size="18.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="10.0" layoutY="235.0" prefHeight="45.0" prefWidth="200.0">
+                     <children>
+                        <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="78.0" text="Update">
+                           <font>
+                              <Font name="Impact" size="18.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="20.0" top="5.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="78.0" text="Delete">
+                           <HBox.margin>
+                              <Insets left="20.0" top="5.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="Impact" size="18.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="10.0" layoutY="280.0" prefHeight="45.0" prefWidth="200.0">
+                     <children>
+                        <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="78.0" text="Update">
+                           <font>
+                              <Font name="Impact" size="18.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="20.0" top="5.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="78.0" text="Delete">
+                           <HBox.margin>
+                              <Insets left="20.0" top="5.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="Impact" size="18.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="10.0" layoutY="325.0" prefHeight="45.0" prefWidth="200.0">
+                     <children>
+                        <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="78.0" text="Update">
+                           <font>
+                              <Font name="Impact" size="18.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="20.0" top="5.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="78.0" text="Delete">
+                           <HBox.margin>
+                              <Insets left="20.0" top="5.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="Impact" size="18.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="10.0" layoutY="370.0" prefHeight="45.0" prefWidth="200.0">
+                     <children>
+                        <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="78.0" text="Update">
+                           <font>
+                              <Font name="Impact" size="18.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="20.0" top="5.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="78.0" text="Delete">
+                           <HBox.margin>
+                              <Insets left="20.0" top="5.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="Impact" size="18.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children></VBox>
          </children>
       </HBox>
-      <HBox layoutX="14.0" layoutY="750.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="1506.0">
+      <HBox layoutX="14.0" layoutY="725.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="1506.0">
          <children>
-            <Pagination fx:id="pagination" prefHeight="100.0" prefWidth="400.0">
+            <Pagination fx:id="pagination" prefHeight="126.0" prefWidth="400.0">
                <HBox.margin>
                   <Insets left="400.0" />
                </HBox.margin>
