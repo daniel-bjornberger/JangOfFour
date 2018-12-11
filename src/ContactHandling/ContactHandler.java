@@ -1,12 +1,16 @@
 package ContactHandling;
 
+import javafx.beans.InvalidationListener;
+import javafx.beans.Observable;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.sql.*;
 
 import java.sql.ResultSet;
 
-public class ContactHandler {
+public class ContactHandler implements Observable {
+    private ArrayList<InvalidationListener> invalidationlisteners = new ArrayList<>();
     private List<Contact> contactList = new ArrayList<>();
     private static ContactHandler ContactHandlerInstance = new ContactHandler();
     private ContactHandler() {}
@@ -78,12 +82,20 @@ public class ContactHandler {
     /** given contactList, clear the list */
     public void clear (List<Contact> givenContactList) {
         givenContactList.clear();
+        notifyListeners();
         System.out.println("Cleared contact list");
     }
 
     // TODO
     public void notifyListeners(){
+        invalidationlisteners.forEach( (i) -> i.invalidated(this));
 
     }
+
+    @Override
+    public void addListener(InvalidationListener listener) { this.invalidationlisteners.add(listener); }
+
+    @Override
+    public void removeListener(InvalidationListener listener) { this.invalidationlisteners.remove(listener); }
 
 }

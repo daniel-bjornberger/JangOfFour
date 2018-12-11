@@ -56,13 +56,8 @@ public class DbHandler {
         pagenumber=1;
         System.out.println("here");
         if (SearchPageDb.getInstance().callDb(DBValidator.getCon(), searchString, pagenumber, hitsPerpage)==true){
-            //is sending empty resultset:
-            ContactHandler.getInstance().createFromString(SearchPageDb.getInstance().getResultSet());
-            //hitAmount = SearchPageDb.getInstance().getHitAmount();
-            //SearchPageDb.getInstance().getResultSet()
-            //System.out.println("resultset: " +
-            //        );
-            System.out.println("DbHandler.searchpage ran.");
+             ContactHandler.getInstance().createFromString(SearchPageDb.getInstance().getResultSet());
+             System.out.println("DbHandler.searchpage ran.");
         }else {
             throw new Exception("Couldn't search Contacts.");
         }
