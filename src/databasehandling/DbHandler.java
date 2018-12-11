@@ -88,5 +88,12 @@ public class DbHandler {
         }
     }
 
+    public int generateID()throws Exception{
+        int result = KeyGenerator.callDB(DBValidator.getCon());
+        if (result>=0){
+            return  result;
+        }else throw new Exception("Couldnt Generate ID.");
+    }
+
 
 }
