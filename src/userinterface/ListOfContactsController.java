@@ -19,7 +19,7 @@ import java.util.ArrayList;
 public class ListOfContactsController {
 
 
-    public Model model=new Model();
+    public Model model = new Model();
 
     @FXML
     private TextField searchField;
@@ -63,13 +63,6 @@ public class ListOfContactsController {
     }
 
     */
-
-
-
-
-
-
-
 
 
     public void initialize() {
@@ -123,31 +116,19 @@ public class ListOfContactsController {
         model.getContactHandler().addListener((c) -> updateView());
 //tableView.setItems((ObservableList<Contact>) model.getContactHandler().getContactList())
     }
-    public void updateView(){
+
+    public void updateView() {
         ObservableList<Contact> ObserableList = FXCollections.observableList(model.getContactHandler().getContactList());
         tableView.setItems(ObserableList);
     }
+
     public void actionSearch(ActionEvent event) {
         DbHandler.getInstance().searchPage(searchField.getText());
     }
 
     public void actionAddNewContact(ActionEvent event) {
-        try {
-            FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(getClass().getResource("ContactView.fxml"));
-            /*
-             * if "fx:controller" is not set in fxml
-             fxmlLoader.setController(NewWindowController);
-             */
-            Scene scene = new Scene(fxmlLoader.load(), 600, 400);
-            Stage stage = new Stage();
-            stage.setTitle("New Window");
-            stage.setScene(scene);
-            stage.show();
-        } catch (IOException e) {
-            System.out.println(e.getMessage());
-            System.out.println("e´rror");
-        }
 
+        ChangeView changeView = new ChangeView();
+        changeView.newWindow("ContactView.fxml");
     }
 }
