@@ -81,16 +81,16 @@ public class SearchPageDb {
             }
         }
 
-        //return callDb();
-        if (hitAmount == 0) {
+        return callDb();
+        /*if (hitAmount == 0) {
             return false;
         } else {
             return true;
-        }
+        }*/
     }
 
 
-    public boolean callDb() {
+    public boolean callDb()  {
         int rows = -1;
         if (connection != null) {
             Statement stm = null;
@@ -143,7 +143,25 @@ public class SearchPageDb {
 
         }
 
-        if (rows < 0) {
+        ResultSet countCopyOfResultSet = resultSet;
+        hitAmount = 0; //
+        // resultSet.getFetchSize(); //this will not work. apparently this resultSet is forward-only
+        //System.out.println("hitAmount: " + resultSet.getFetchSize() );
+
+        try {
+            while (countCopyOfResultSet.next()) {
+                System.out.println("- row id: " + countCopyOfResultSet.getInt("id"));
+                hitAmount++;
+            }
+        }
+        catch(Exception e) {
+                System.err.println("eror: " + e);
+        }
+        System.out.println("# of hits: " + hitAmount);
+
+
+
+        if (hitAmount < 0) {
             return false;
         } else {
             return true;
