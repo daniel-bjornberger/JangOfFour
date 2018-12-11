@@ -20,7 +20,7 @@ public abstract class KeyGenerator {
                 stm = connection.createStatement();
                 resultSet = stm.executeQuery(query);
                 int resultInt = resultSet.getInt("id");
-
+                System.out.println("RESULT FROM KEYGEN:" + resultInt);
                 return (resultInt+1);
 
             } catch (SQLException sqle) {
