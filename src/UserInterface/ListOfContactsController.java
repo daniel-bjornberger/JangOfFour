@@ -128,4 +128,10 @@ public class ListOfContactsController {
     public void actionSearch(ActionEvent event) {
         DbHandler.getInstance().searchPage(searchField.getText());
     }
+
+    public void actionAddNewContact(ActionEvent event) {
+        ChangeView changeView=new ChangeView();
+        changeView.newWindow("ContactView.fxml");
+
+    }
 }

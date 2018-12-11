@@ -52,7 +52,7 @@
                   <Insets left="60.0" top="40.0" />
                </HBox.margin>
             </Button>
-            <Button fx:id="addNewContactButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="45.0" prefWidth="200.0" text="Add new contact">
+            <Button fx:id="addNewContactButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#actionAddNewContact" prefHeight="45.0" prefWidth="200.0" text="Add new contact">
                <font>
                   <Font name="Impact" size="24.0" />
                </font>
