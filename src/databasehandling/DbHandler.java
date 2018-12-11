@@ -1,8 +1,5 @@
-package databaseHandling;
-import ContactHandling.*;
-
-import java.nio.channels.IllegalChannelGroupException;
-import java.sql.*;
+package databasehandling;
+import contacthandling.*;
 
 public class DbHandler {
     private static DbHandler DbHandlerInstance =new DbHandler();

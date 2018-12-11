@@ -1,11 +1,7 @@
-package UserInterface;
+package userinterface;
 
-import ContactHandling.ContactHandler;
-import databaseHandling.DbHandler;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-
-import java.util.ArrayList;
+import contacthandling.ContactHandler;
+import databasehandling.DbHandler;
 
 public class Model {
 

@@ -1,8 +1,4 @@
-package databaseHandling;
-
-import ContactHandling.Contact;
-import ContactHandling.ContactHandler;
-import com.sun.corba.se.impl.encoding.CodeSetComponentInfo;
+package databasehandling;
 
 import java.sql.Connection;
 import java.sql.ResultSet;

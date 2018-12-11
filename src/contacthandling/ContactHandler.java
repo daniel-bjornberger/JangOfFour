@@ -1,8 +1,7 @@
-package ContactHandling;
+package contacthandling;
 
 import javafx.beans.InvalidationListener;
 import javafx.beans.Observable;
-import javafx.collections.ObservableList;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -75,7 +74,7 @@ public class ContactHandler implements Observable {
     }
 
     /** given a contact detail, remove from contactList */
-    public void remove (ContactHandling.Contact givenContact) {
+    public void remove (contacthandling.Contact givenContact) {
         //remove a contact given contact
         contactList.remove(givenContact);
     }

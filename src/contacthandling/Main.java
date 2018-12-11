@@ -1,11 +1,6 @@
-package ContactHandling;
+package contacthandling;
 
-import databaseHandling.*;
-
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
-import java.sql.ResultSet;
+import databasehandling.*;
 
 public class Main{
     public static void main (String [] args){

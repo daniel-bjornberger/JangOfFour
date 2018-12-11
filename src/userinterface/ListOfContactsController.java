@@ -1,9 +1,7 @@
-package UserInterface;
+package userinterface;
 
-import ContactHandling.Contact;
-import ContactHandling.ContactHandler;
-import databaseHandling.DBValidator;
-import databaseHandling.DbHandler;
+import contacthandling.Contact;
+import databasehandling.DbHandler;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;

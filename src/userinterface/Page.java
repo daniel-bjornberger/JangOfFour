@@ -1,4 +1,4 @@
-package UserInterface;
+package userinterface;
 
 public class Page {
 
