@@ -13,23 +13,19 @@ public class ChangeView {
 
     public  void newWindow(String path) {
 
-
         try {
-
-
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("/ContactView.fxml"));
-            Parent content = loader.load();
-            //root = FXMLLoader.load(getClass().getClassLoader().getResource("ContactView.fxml"),r);
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            fxmlLoader.setLocation(getClass().getResource(path));
+            Scene scene = new Scene(fxmlLoader.load(), 1536, 864);
             Stage stage = new Stage();
-            stage.setTitle("My New Stage Title");
-            stage.setScene(new Scene(content, 1536, 864));
+            stage.setTitle("New Window");
+            stage.setScene(scene);
             stage.show();
-            // Hide this current window (if this is what you want)
-            //((Node) (event.getSource())).getScene().getWindow().hide();
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
+            System.out.println("e´rror");
         }
-    }
 
+
+    }
 }
