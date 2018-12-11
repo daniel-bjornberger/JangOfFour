@@ -1,8 +1,11 @@
 package UserInterface;
 
 import ContactHandling.Contact;
+import databaseHandling.DBValidator;
+import databaseHandling.DbHandler;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -36,7 +39,9 @@ public class ListOfContactsController {
     @FXML
     private Pagination pagination;
 
-
+    public Pagination getPagination() {
+        return pagination;
+    }
 
     private ObservableList<Contact> contacts = FXCollections.observableList(new ArrayList<>());
 
@@ -109,6 +114,11 @@ public class ListOfContactsController {
 
 
         tableView.setItems(contacts);
+        pagination.s
 
+    }
+
+    public void actionSearch(ActionEvent event) {
+        DbHandler.getInstance().searchPage(searchField.getText());
     }
 }
