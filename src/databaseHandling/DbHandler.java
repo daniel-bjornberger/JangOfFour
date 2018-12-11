@@ -9,7 +9,7 @@ public class DbHandler {
     private String searchString;
     private int pagenumber = 1;
     private int pageAmount;
-    private int hitsPerpage = 15; //declare as private in SearchPageDb, set it according to this.
+    private int hitsPerpage = 30; //declare as private in SearchPageDb, set it according to this.
     private int hitAmount;
 
 
@@ -57,6 +57,7 @@ public class DbHandler {
         System.out.println("here");
 
         try {
+            System.out.println(searchString);
         if  (SearchPageDb.getInstance().callDb(DBValidator.getCon(), searchString, pagenumber, hitsPerpage)==true) {
             //is sending empty resultset:
             ContactHandler.getInstance().createFromString(SearchPageDb.getInstance().getResultSet());

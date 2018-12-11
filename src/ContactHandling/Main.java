@@ -9,7 +9,7 @@ import java.sql.ResultSet;
 
 public class Main{
     public static void main (String [] args){
-        DBValidator dbValidator=new DBValidator();
+
         Contact c=new Contact(80,"JJ","Gunnarsson","112","Guldheden","joel@.se");
         AddDb.callDb(DBValidator.getCon(),c);
 

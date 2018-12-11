@@ -1,5 +1,6 @@
 package UserInterface;
 
+import databaseHandling.DBValidator;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -11,6 +12,7 @@ public class ContactListMain extends Application {
 
     @Override
     public void start(Stage stage) throws Exception{
+        DBValidator dbValidator=new DBValidator();
 
         /*FXMLLoader loader = new FXMLLoader(getClass().getResource("ListOfContactsView.fxml"));
         Parent root = loader.load();

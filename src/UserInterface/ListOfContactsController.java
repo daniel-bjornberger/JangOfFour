@@ -1,6 +1,7 @@
 package UserInterface;
 
 import ContactHandling.Contact;
+import ContactHandling.ContactHandler;
 import databaseHandling.DBValidator;
 import databaseHandling.DbHandler;
 import javafx.collections.FXCollections;
@@ -15,6 +16,8 @@ import java.util.ArrayList;
 
 public class ListOfContactsController {
 
+
+    public Model model=new Model();
 
     @FXML
     private TextField searchField;
@@ -43,6 +46,7 @@ public class ListOfContactsController {
         return pagination;
     }
 
+    //private ObservableList<Contact> contacts = FXCollections.observableList(new ArrayList<>());
     private ObservableList<Contact> contacts = FXCollections.observableList(new ArrayList<>());
 
 
@@ -113,11 +117,14 @@ public class ListOfContactsController {
         emailColumn.setCellValueFactory(new PropertyValueFactory<>("email"));
 
 
-        tableView.setItems(contacts);
-        pagination.s
-
+        //tableView.setItems(contacts);
+        model.getContactHandler().addListener((c) -> updateView());
+//tableView.setItems((ObservableList<Contact>) model.getContactHandler().getContactList())
     }
-
+    public void updateView(){
+        ObservableList<Contact> ObserableList = FXCollections.observableList(model.getContactHandler().getContactList());
+        tableView.setItems(ObserableList);
+    }
     public void actionSearch(ActionEvent event) {
         DbHandler.getInstance().searchPage(searchField.getText());
     }

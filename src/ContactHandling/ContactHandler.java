@@ -2,6 +2,7 @@ package ContactHandling;
 
 import javafx.beans.InvalidationListener;
 import javafx.beans.Observable;
+import javafx.collections.ObservableList;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,7 +12,7 @@ import java.sql.ResultSet;
 
 public class ContactHandler implements Observable {
     private ArrayList<InvalidationListener> invalidationlisteners = new ArrayList<>();
-    private List<Contact> contactList = new ArrayList<>();
+    private List <Contact> contactList = new ArrayList<>();
     private static ContactHandler ContactHandlerInstance = new ContactHandler();
     private ContactHandler() {}
 
@@ -94,6 +95,10 @@ public class ContactHandler implements Observable {
 
     @Override
     public void addListener(InvalidationListener listener) { this.invalidationlisteners.add(listener); }
+
+    public List<Contact> getContactList() {
+        return contactList;
+    }
 
     @Override
     public void removeListener(InvalidationListener listener) { this.invalidationlisteners.remove(listener); }
