@@ -1,6 +1,6 @@
-package databaseHandling;
+package databasehandling;
 
-import ContactHandling.Contact;
+import contacthandling.Contact;
 
 import java.sql.*;
 

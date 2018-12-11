@@ -1,17 +1,25 @@
-package UserInterface;
+package userinterface;
 
-import ContactHandling.Contact;
+import contacthandling.Contact;
+import databasehandling.DbHandler;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 
 public class ListOfContactsController {
 
+
+    public Model model = new Model();
 
     @FXML
     private TextField searchField;
@@ -36,8 +44,11 @@ public class ListOfContactsController {
     @FXML
     private Pagination pagination;
 
+    public Pagination getPagination() {
+        return pagination;
+    }
 
-
+    //private ObservableList<Contact> contacts = FXCollections.observableList(new ArrayList<>());
     private ObservableList<Contact> contacts = FXCollections.observableList(new ArrayList<>());
 
 
@@ -52,13 +63,6 @@ public class ListOfContactsController {
     }
 
     */
-
-
-
-
-
-
-
 
 
     public void initialize() {
@@ -108,7 +112,23 @@ public class ListOfContactsController {
         emailColumn.setCellValueFactory(new PropertyValueFactory<>("email"));
 
 
-        tableView.setItems(contacts);
+        //tableView.setItems(contacts);
+        model.getContactHandler().addListener((c) -> updateView());
+//tableView.setItems((ObservableList<Contact>) model.getContactHandler().getContactList())
+    }
 
+    public void updateView() {
+        ObservableList<Contact> ObserableList = FXCollections.observableList(model.getContactHandler().getContactList());
+        tableView.setItems(ObserableList);
+    }
+
+    public void actionSearch(ActionEvent event) {
+        DbHandler.getInstance().searchPage(searchField.getText());
+    }
+
+    public void actionAddNewContact(ActionEvent event) {
+
+        ChangeView changeView = new ChangeView();
+        changeView.newWindow("ContactView.fxml");
     }
 }

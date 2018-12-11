@@ -1,15 +1,10 @@
-package ContactHandling;
+package contacthandling;
 
-import databaseHandling.*;
-
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
-import java.sql.ResultSet;
+import databasehandling.*;
 
 public class Main{
     public static void main (String [] args){
-        DBValidator dbValidator=new DBValidator();
+
         Contact c=new Contact(80,"JJ","Gunnarsson","112","Guldheden","joel@.se");
         AddDb.callDb(DBValidator.getCon(),c);
 
@@ -26,13 +21,14 @@ public class Main{
         java.sql.Connection getCon = DBValidator.getCon();
         System.out.println("getCon: " + getCon);
         System.out.println("1. on the way...");
+
         //SearchPageDb.getInstance().callDb(getCon,"Joel",1,10);
         //if (SearchPageDb.getInstance().callDb(getCon, "Joel", 1,10 )) {
         try {
             System.out.println("2. on the way...");
             //ResultSet resultSet = SearchPageDb.getInstance().getResultSet();
 
-                    DbHandler.getInstance().searchPage("Joel");
+            DbHandler.getInstance().searchPage("Box");
             //SearchPageDb.getInstance().callDb(getCon,"01",1,10)
 
             System.out.println("3. on the way...");
@@ -41,7 +37,7 @@ public class Main{
         } catch (Exception e) {
             System.out.println("Exception: " + e);
             }
-
+            ContactHandler.getInstance().displayAllContacts();
         //} catch (SQLException e) {
         //        System.err.println(e);
         //    };

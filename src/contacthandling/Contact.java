@@ -1,4 +1,4 @@
-package ContactHandling;
+package contacthandling;
 
 /* have a class that represents the contact being created or interacted with */
 public class Contact {

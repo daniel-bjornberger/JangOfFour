@@ -1,4 +1,4 @@
-package databaseHandling;
+package databasehandling;
 import java.sql.*;
 
 public class DBValidator {
