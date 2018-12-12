@@ -110,7 +110,7 @@
                         <Insets left="65.0" />
                      </HBox.margin>
                   </Button>
-                  <Button fx:id="cancelButton" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="45.0" prefWidth="105.0" text="Cancel">
+                  <Button fx:id="cancelButton" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#actionCancel" prefHeight="45.0" prefWidth="105.0" text="Cancel">
                      <font>
                         <Font name="Impact" size="24.0" />
                      </font>

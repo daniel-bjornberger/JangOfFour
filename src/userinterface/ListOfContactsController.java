@@ -7,6 +7,8 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -154,7 +156,7 @@ public class ListOfContactsController {
 
         //tableView.setItems(contacts);
         model.getContactHandler().addListener((c) -> updateView());
-//tableView.setItems((ObservableList<Contact>) model.getContactHandler().getContactList())
+        //tableView.setItems((ObservableList<Contact>) model.getContactHandler().getContactList())
     }
 
     public void updateView() {
@@ -168,7 +170,27 @@ public class ListOfContactsController {
 
     public void actionAddNewContact(ActionEvent event) {
 
+        /*
         ChangeView changeView = new ChangeView();
         changeView.newWindow("ContactView.fxml");
+        */
+
+
+        Parent parent = null;
+
+        try {
+            parent = FXMLLoader.load(getClass().getResource("ContactView.fxml"));
+        } catch (IOException e) {
+            System.err.println(e.getMessage());
+        }
+
+        Scene scene = new Scene(parent);
+
+        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+
+        window.setScene(scene);
+        window.show();
+
+
     }
 }
