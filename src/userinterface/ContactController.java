@@ -18,7 +18,7 @@ import java.io.IOException;
 
 public class ContactController {
 
-
+    Model model = Model.getInstance();
     private Contact selectedContact;
 
 

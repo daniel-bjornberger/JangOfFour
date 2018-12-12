@@ -22,7 +22,7 @@ import java.util.ArrayList;
 public class ListOfContactsController {
 
 
-    public Model model = new Model();
+    public Model model = Model.getInstance();
 
     @FXML
     private TextField searchField;

@@ -5,10 +5,16 @@ import contacthandling.ContactHandler;
 import databasehandling.DbHandler;
 
 public class Model {
+    private static Model model = new Model();
+    private DbHandler dbHandler=DbHandler.getInstance();
+    private ContactHandler contactHandler=ContactHandler.getInstance();
+    private Contact selectedContact;
+    private Model(){}
 
- private DbHandler dbHandler=DbHandler.getInstance();
- private ContactHandler contactHandler=ContactHandler.getInstance();
- private Contact selectedContact;
+    public static Model getInstance(){
+        return model;
+    }
+
 
     public void setSelectedContact(Contact selectedContact) {
         this.selectedContact = selectedContact;
