@@ -126,7 +126,7 @@ public class ListOfContactsController {
 
     public void actionListAllContacts(ActionEvent event) {
 
-
+        DbHandler.getInstance().searchPage("");         // TODO Ska denna metod implementeras på något annat sätt?
 
     }
 
@@ -183,6 +183,17 @@ public class ListOfContactsController {
     {
         updateContactButton.setDisable(false);
         deleteContactButton.setDisable(false);
+    }
+
+
+
+
+    public void onEnter(ActionEvent event) {
+
+        System.out.println("Enter i searchfield");
+
+        actionSearch(event);
+
     }
 
 
