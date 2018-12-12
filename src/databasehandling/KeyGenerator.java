@@ -22,7 +22,7 @@ public abstract class KeyGenerator {
                 resultSet = stm.executeQuery(query);
                 if (resultSet.next()){
                     int resultInt = resultSet.getInt("id");
-                    System.out.println("RESULT FROM KEYGEN:" + resultInt);
+                    System.out.println("RESULT FROM database:" + resultInt);
                     return (resultInt+1);
                 }
                 return (1);

@@ -78,6 +78,20 @@ public class ContactController {
     public void actionSave(ActionEvent event) throws Exception {
         DbHandler.getInstance().add(new Contact(DbHandler.getInstance().generateID(),firstNameField.getText(),lastNameField.getText(),phoneField.getText(),addressField.getText(),emailField.getText()));
 
+        Parent parent = null;
+
+        try {
+            parent = FXMLLoader.load(getClass().getResource("ListOfContactsView.fxml"));
+        } catch (IOException e) {
+            System.err.println(e.getMessage());
+        }
+
+        Scene scene = new Scene(parent);
+
+        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+
+        window.setScene(scene);
+        window.show();
         //firstNameField.getText()
 
     }

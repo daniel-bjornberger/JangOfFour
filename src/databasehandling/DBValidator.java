@@ -3,7 +3,7 @@ import java.sql.*;
 
 public class DBValidator {
 
-    private final static String dbConnection = "jdbc:sqlite:"+System.getProperty("user.dir")+"\\Database";
+    private final static String dbConnection = "jdbc:sqlite:"+System.getProperty("user.dir")+"\\Database2";
     private static Connection con;
     static {
 
