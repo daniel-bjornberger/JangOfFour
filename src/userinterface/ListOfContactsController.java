@@ -173,7 +173,7 @@ public class ListOfContactsController {
     public void actionListAllContacts(ActionEvent event) {
 
 
-        
+
     }
 
 
@@ -199,6 +199,146 @@ public class ListOfContactsController {
 
         window.setScene(scene);
         window.show();
+
+    }
+
+
+    public void actionUpdate0(ActionEvent event) {
+
+
+
+    }
+
+
+    public void actionUpdate1(ActionEvent event) {
+
+
+
+    }
+
+
+    public void actionUpdate2(ActionEvent event) {
+
+
+
+    }
+
+
+    public void actionUpdate3(ActionEvent event) {
+
+
+
+    }
+
+
+    public void actionUpdate4(ActionEvent event) {
+
+
+
+    }
+
+
+    public void actionUpdate5(ActionEvent event) {
+
+
+
+    }
+
+
+    public void actionUpdate6(ActionEvent event) {
+
+
+
+    }
+
+
+    public void actionUpdate7(ActionEvent event) {
+
+
+
+    }
+
+
+    public void actionUpdate8(ActionEvent event) {
+
+
+
+    }
+
+
+    public void actionUpdate9(ActionEvent event) {
+
+
+
+    }
+
+
+    public void actionDelete0(ActionEvent event) {
+
+
+
+    }
+
+
+    public void actionDelete1(ActionEvent event) {
+
+
+
+    }
+
+
+    public void actionDelete2(ActionEvent event) {
+
+
+
+    }
+
+
+    public void actionDelete3(ActionEvent event) {
+
+
+
+    }
+
+
+    public void actionDelete4(ActionEvent event) {
+
+
+
+    }
+
+
+    public void actionDelete5(ActionEvent event) {
+
+
+
+    }
+
+
+    public void actionDelete6(ActionEvent event) {
+
+
+
+    }
+
+
+    public void actionDelete7(ActionEvent event) {
+
+
+
+    }
+
+
+    public void actionDelete8(ActionEvent event) {
+
+
+
+    }
+
+
+    public void actionDelete9(ActionEvent event) {
+
+
 
     }
 
