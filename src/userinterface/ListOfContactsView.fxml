@@ -239,7 +239,7 @@
                   </HBox>
                   <HBox layoutX="10.0" layoutY="325.0" prefHeight="45.0" prefWidth="200.0">
                      <children>
-                        <Button fx:id="updateButton8" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false"onAction="#actionUpdate8"  prefHeight="35.0" prefWidth="78.0" text="Update">
+                        <Button fx:id="updateButton8" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#actionUpdate8"  prefHeight="35.0" prefWidth="78.0" text="Update">
                            <font>
                               <Font name="Impact" size="18.0" />
                            </font>
@@ -259,7 +259,7 @@
                   </HBox>
                   <HBox layoutX="10.0" layoutY="370.0" prefHeight="45.0" prefWidth="200.0">
                      <children>
-                        <Button fx:id="updateButton9" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false"onAction="#actionUpdate9"  prefHeight="35.0" prefWidth="78.0" text="Update">
+                        <Button fx:id="updateButton9" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#actionUpdate9"  prefHeight="35.0" prefWidth="78.0" text="Update">
                            <font>
                               <Font name="Impact" size="18.0" />
                            </font>
