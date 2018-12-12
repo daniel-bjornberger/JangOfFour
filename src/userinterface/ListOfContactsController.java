@@ -104,12 +104,22 @@ public class ListOfContactsController {
         deleteContactButton.setDisable(true);
 
 
+        searchField.setText(DbHandler.getInstance().getSearchString());
+
+        //System.out.println(model.getSearchText());
 
 
 
 
-        tableView.setItems(contacts);
+
+
+
+
+
+        //tableView.setItems(contacts);
+
         model.getContactHandler().addListener((c) -> updateView());
+        actionSearch(null);
         //tableView.setItems((ObservableList<Contact>) model.getContactHandler().getContactList())
     }
 
@@ -166,7 +176,11 @@ public class ListOfContactsController {
 
         if (alert.getResult() == yes) {
 
-            contacts.remove(model.getSelectedContact());
+            try {
+                DbHandler.getInstance().delete(model.getSelectedContact());
+            } catch (Exception e) {
+                System.err.println(e.getMessage());
+            }
 
             //Deleta från databasen
 

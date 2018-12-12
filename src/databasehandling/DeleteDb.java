@@ -9,7 +9,7 @@ public abstract class DeleteDb {
 
         int rowCount = -1;
 
-        String SQL = "DELETE FROM contacts WHERE id = " + contact.getId();
+        String SQL = "DELETE FROM contacts WHERE id = " + contact.getId() + ";";
 
         System.out.println(SQL);        // TODO Check of SQL statement, shall eventually be deleted.
 

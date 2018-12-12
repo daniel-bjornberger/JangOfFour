@@ -10,7 +10,7 @@ public class DbHandler {
     private static DbHandler DbHandlerInstance =new DbHandler();
 
     /**Latest search*/
-    private String searchString;
+    private String searchString = "";
 
     /*The current pagenumber the UI will show*/
     private int pagenumber = 1;
@@ -43,7 +43,7 @@ public class DbHandler {
     //*Adds Contact to database*/
     public void add(Contact contact)throws Exception{
         if (AddDb.callDb(DBValidator.getCon(), contact)==true){
-            SearchPageDb.getInstance().callDb();
+            searchPage(searchString);
         } else {
             throw new Exception("Couldn't add Contact in database");
         }
@@ -51,7 +51,7 @@ public class DbHandler {
     /**Deletes contact from database, and does a new search afterwards. */
     public void delete(Contact contact)throws Exception{
         if (DeleteDb.callDb(DBValidator.getCon(), contact)==true){
-            SearchPageDb.getInstance().callDb();
+            searchPage(searchString);
         }else {
             throw new Exception("Couldn't delete Contact in database");
         }
@@ -62,7 +62,7 @@ public class DbHandler {
     public void update(Contact contact)throws Exception{
 
         if (UpdateDb.callDb(DBValidator.getCon(), contact)==true){
-            SearchPageDb.getInstance().callDb();
+            searchPage(searchString);
         }else {
             throw new Exception("Couldn't update Contact in database.");
         }
@@ -119,5 +119,7 @@ public class DbHandler {
         }else throw new Exception("Couldnt Generate ID.");
     }
 
-
+    public String getSearchString() {
+        return searchString;
+    }
 }
