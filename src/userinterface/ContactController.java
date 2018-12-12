@@ -2,6 +2,7 @@ package userinterface;
 
 import contacthandling.Contact;
 import databasehandling.DbHandler;
+import javafx.beans.binding.Bindings;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -32,6 +33,21 @@ public class ContactController {
     private Button okButton;
     @FXML
     private Button cancelButton;
+
+
+
+    public void initialize() {
+
+        okButton.disableProperty().bind((Bindings.isEmpty(firstNameField.textProperty()))
+                .or(Bindings.isEmpty(lastNameField.textProperty()))
+                .or(Bindings.isEmpty(phoneField.textProperty()))
+                .or(Bindings.isEmpty(addressField.textProperty()))
+                .or(Bindings.isEmpty(emailField.textProperty())));
+
+    }
+
+
+
 
 
     public void actionSave(ActionEvent event) throws Exception {
