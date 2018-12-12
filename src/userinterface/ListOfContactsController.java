@@ -164,9 +164,18 @@ public class ListOfContactsController {
         tableView.setItems(ObservableList);
     }
 
+
     public void actionSearch(ActionEvent event) {
         DbHandler.getInstance().searchPage(searchField.getText());
     }
+
+
+    public void actionListAllContacts(ActionEvent event) {
+
+
+        
+    }
+
 
     public void actionAddNewContact(ActionEvent event) {
 
@@ -191,6 +200,10 @@ public class ListOfContactsController {
         window.setScene(scene);
         window.show();
 
-
     }
+
+
+
+
+
 }

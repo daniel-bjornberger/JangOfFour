@@ -44,7 +44,7 @@
                   <Insets left="20.0" top="40.0" />
                </HBox.margin>
             </Button>
-            <Button fx:id="listAllContactsButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="45.0" prefWidth="200.0" text="List all contacts">
+            <Button fx:id="listAllContactsButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#actionListAllContacts" prefHeight="45.0" prefWidth="200.0" text="List all contacts">
                <font>
                   <Font name="Impact" size="24.0" />
                </font>
