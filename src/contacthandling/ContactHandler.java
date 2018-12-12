@@ -20,23 +20,16 @@ public class ContactHandler implements Observable {
     }
 
     public List<Contact> createFromString (ResultSet rs) throws SQLException {
-        System.out.println("createFromString...");
-        ResultSet myResultSet= rs;
         //given: SearchPageDb.getInstance.Result
         //create one or more contact from that
-        System.out.println("see current contactsList. It is: " +
-                contactList);
+        System.out.println("createFromString...");
+        ResultSet myResultSet= rs;
+        System.out.println("see current contactsList. It is: " + contactList);
 
         //remove all contacts from Contact List first
         contactList.clear();
 
-        System.out.println("Work with ResultSet: " + rs);
-        System.out.println("is there an rs.next()? " + rs.next());
-
         while (rs.next()) {
-            System.out.println("going through each row...");
-            //System.out.println(rs.getInt(1));
-            //System.out.println(rs.getString(2));
             contactList.add(new Contact(
                     rs.getInt("id"),
                     rs.getString("firstname"),
@@ -45,7 +38,7 @@ public class ContactHandler implements Observable {
                     rs.getString("address"),
                     rs.getString("email")
             ));
-            //System.out.println("- added 1 contact to contactList");
+            System.out.println("- added 1 contact to contactList");
             ;
         }
 
@@ -55,6 +48,7 @@ public class ContactHandler implements Observable {
         notifyListeners();
         return (contactList);
     }
+
     /**
      * display all contacts currently in contactList
      */
