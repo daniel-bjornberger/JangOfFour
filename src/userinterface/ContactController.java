@@ -10,6 +10,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -23,6 +24,8 @@ public class ContactController {
 
 
     @FXML
+    private Label contactHeading;
+    @FXML
     private TextField firstNameField;
     @FXML
     private TextField lastNameField;
@@ -33,7 +36,7 @@ public class ContactController {
     @FXML
     private TextField emailField;
     @FXML
-    private Button okButton;
+    private Button saveButton;
     @FXML
     private Button cancelButton;
 
@@ -41,11 +44,30 @@ public class ContactController {
 
     public void initialize() {
 
-        okButton.disableProperty().bind((Bindings.isEmpty(firstNameField.textProperty()))
+        saveButton.disableProperty().bind((Bindings.isEmpty(firstNameField.textProperty()))
                 .or(Bindings.isEmpty(lastNameField.textProperty()))
                 .or(Bindings.isEmpty(phoneField.textProperty()))
                 .or(Bindings.isEmpty(addressField.textProperty()))
                 .or(Bindings.isEmpty(emailField.textProperty())));
+
+        selectedContact = model.getSelectedContact();
+
+        if (selectedContact != null) {
+
+            firstNameField.setText(selectedContact.getFirstname());
+            lastNameField.setText(selectedContact.getLastname());
+            phoneField.setText(selectedContact.getPhone());
+            addressField.setText(selectedContact.getAddress());
+            emailField.setText(selectedContact.getEmail());
+
+            contactHeading.setText("Update contact");
+
+        }
+        else {
+
+            contactHeading.setText("Add new contact");
+
+        }
 
     }
 
@@ -80,7 +102,7 @@ public class ContactController {
     }
 
 
-    public void initTextFields(Contact contact) {
+    /*public void initTextFields(Contact contact) {
 
         selectedContact = contact;
 
@@ -90,7 +112,7 @@ public class ContactController {
         addressField.setText(selectedContact.getAddress());
         emailField.setText(selectedContact.getEmail());
 
-    }
+    }*/
 
 
 }

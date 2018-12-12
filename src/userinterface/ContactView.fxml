@@ -9,11 +9,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="864.0" prefWidth="1536.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="userinterface.ContactController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="userinterface.ContactController">
    <children>
-      <VBox layoutX="568.0" layoutY="80.0" prefHeight="834.0" prefWidth="600.0">
+      <VBox layoutX="483.0" layoutY="40.0" prefHeight="834.0" prefWidth="455.0">
          <children>
-            <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="29.0" prefWidth="400.0" text="Label - Add or Update">
+            <Label fx:id="contactHeading" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="29.0" prefWidth="400.0" text="Label - Add or Update">
                <font>
                   <Font name="Impact" size="24.0" />
                </font>
@@ -102,7 +102,7 @@
                   <Insets top="30.0" />
                </VBox.margin>
                <children>
-                  <Button fx:id="okButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#actionSave" prefHeight="45.0" prefWidth="105.0" text="Ok">
+                  <Button fx:id="saveButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#actionSave" prefHeight="45.0" prefWidth="105.0" text="Save">
                      <font>
                         <Font name="Impact" size="24.0" />
                      </font>

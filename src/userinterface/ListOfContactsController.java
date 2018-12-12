@@ -2,20 +2,12 @@ package userinterface;
 
 import contacthandling.Contact;
 import databasehandling.DbHandler;
-import javafx.beans.binding.Bindings;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.stage.Stage;
-
-import java.io.IOException;
 import java.util.ArrayList;
 
 
@@ -141,6 +133,8 @@ public class ListOfContactsController {
 
     public void actionAddNewContact(ActionEvent event) {
 
+        model.setSelectedContact(null);
+
         ChangeView changeView = new ChangeView();
         changeView.newView("ContactView.fxml", event);
 
@@ -150,13 +144,34 @@ public class ListOfContactsController {
 
     public void actionUpdateContact(ActionEvent event) {
 
+        model.setSelectedContact(tableView.getSelectionModel().getSelectedItem());
 
+        ChangeView changeView = new ChangeView();
+        changeView.newView("ContactView.fxml", event);
 
     }
 
 
 
     public void actionDeleteContact(ActionEvent event) {
+
+        ButtonType yes = new ButtonType("Yes", ButtonBar.ButtonData.YES);
+        ButtonType no = new ButtonType("No", ButtonBar.ButtonData.NO);
+
+        model.setSelectedContact(tableView.getSelectionModel().getSelectedItem());
+
+        Alert alert = new Alert(Alert.AlertType.NONE, "Delete the contact " + model.getSelectedContact().getFirstname() + " " + model.getSelectedContact().getLastname() + "?", yes, no);
+
+        alert.showAndWait();
+
+        if (alert.getResult() == yes) {
+
+            contacts.remove(model.getSelectedContact());
+
+            //Deleta från databasen
+
+        }
+
 
 
 
