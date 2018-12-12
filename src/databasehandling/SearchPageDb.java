@@ -9,12 +9,28 @@ import java.sql.Statement;
  * @author Pontus Fredriksson.
  */
 public class SearchPageDb {
+
+    /** Singleton instance  */
     private static SearchPageDb searchPageDbInstance = new SearchPageDb();
+
+
+    /**Stores the connection to the database */
     private Connection connection;
-    private String searchString;
+
+    /**Stores the latest searchString. */
+    private String searchString = "";
+
+    /**Stores the latest searchString. */
     private int pageNumber = 1;
+
+    /**Stores latest prefered hits per page.*/
     private int hitsPerpage;
+
+    /**Stored latest amount of rows returned from the database. */
     private int hitAmount;
+
+
+    /**Store the latest result returned from the database.    */
     private ResultSet resultSet;
 
     /**Returns latest resultset */
@@ -42,7 +58,7 @@ public class SearchPageDb {
      * @param searchString the string the database will try to match.
      * @param pageNumber refered pagenumber to return, set to '1' if not relevant.
      * @param hitsPerpage How many rows the UI shows.
-     * @return A java.sql.ResultSet.
+     * @return True if all went well
      */
     public boolean callDb(Connection connection,
                           String searchString,
@@ -94,6 +110,10 @@ public class SearchPageDb {
     }
 
 
+    /**Calls database with info from the last search.
+     * saves result in 'resultSet' field.
+     * @return True if all went well.
+     */
     public boolean callDb()  {
         int rows = -1;
         if (connection != null) {

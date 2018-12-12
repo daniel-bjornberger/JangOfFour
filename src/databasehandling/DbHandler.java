@@ -1,15 +1,19 @@
 package databasehandling;
 import contacthandling.*;
 
-/** Singleton class to handle access classes to the Database */
+/** Singleton class to handle access classes to the Database
+ * @author Pontus Fredriksson.
+ * */
 public class DbHandler {
 
+    /**The singleton instance. */
     private static DbHandler DbHandlerInstance =new DbHandler();
 
     /**Latest search*/
     private String searchString;
+
+    /*The current pagenumber the UI will show*/
     private int pagenumber = 1;
-    private int pageAmount;
 
     /**Change here based on preferences for UI*/
     private int hitsPerpage = 30; //declare as private in SearchPageDb, set it according to this.
@@ -22,7 +26,6 @@ public class DbHandler {
 
 
     /**
-     *
      * @return how many pages of searchresults there is of the last searchquery.
      */
     public int getPageAmount(){
