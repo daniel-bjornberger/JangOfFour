@@ -207,21 +207,31 @@ public class ListOfContactsController {
 
     public void actionAddNewContact(ActionEvent event) {
 
-        /*
         ChangeView changeView = new ChangeView();
-        changeView.newWindow("ContactView.fxml");
-        */
+        changeView.newView("ContactView.fxml", event);
 
+    }
+
+
+
+    public void update(int index, ActionEvent event) {
+
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("ContactView.fxml"));
 
         Parent parent = null;
 
         try {
-            parent = FXMLLoader.load(getClass().getResource("ContactView.fxml"));
-        } catch (IOException e) {
+            parent = loader.load();
+        }
+        catch (IOException e) {
             System.err.println(e.getMessage());
         }
 
         Scene scene = new Scene(parent);
+
+        ContactController controller = loader.getController();
+        controller.initTextFields(contacts.get(index));
 
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
 
@@ -233,70 +243,72 @@ public class ListOfContactsController {
 
     public void actionUpdate0(ActionEvent event) {
 
+        update(0, event);
 
+        System.out.println(event.toString());
 
     }
 
 
     public void actionUpdate1(ActionEvent event) {
 
-
+        update(1, event);
 
     }
 
 
     public void actionUpdate2(ActionEvent event) {
 
-
+        update(2, event);
 
     }
 
 
     public void actionUpdate3(ActionEvent event) {
 
-
+        update(3, event);
 
     }
 
 
     public void actionUpdate4(ActionEvent event) {
 
-
+        update(4, event);
 
     }
 
 
     public void actionUpdate5(ActionEvent event) {
 
-
+        update(5, event);
 
     }
 
 
     public void actionUpdate6(ActionEvent event) {
 
-
+        update(6, event);
 
     }
 
 
     public void actionUpdate7(ActionEvent event) {
 
-
+        update(7, event);
 
     }
 
 
     public void actionUpdate8(ActionEvent event) {
 
-
+        update(8, event);
 
     }
 
 
     public void actionUpdate9(ActionEvent event) {
 
-
+        update(9, event);
 
     }
 

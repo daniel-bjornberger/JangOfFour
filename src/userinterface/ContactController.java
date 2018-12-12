@@ -19,6 +19,9 @@ import java.io.IOException;
 public class ContactController {
 
 
+    private Contact selectedContact;
+
+
     @FXML
     private TextField firstNameField;
     @FXML
@@ -73,6 +76,19 @@ public class ContactController {
 
         window.setScene(scene);
         window.show();
+
+    }
+
+
+    public void initTextFields(Contact contact) {
+
+        selectedContact = contact;
+
+        firstNameField.setText(selectedContact.getFirstname());
+        lastNameField.setText(selectedContact.getLastname());
+        phoneField.setText(selectedContact.getPhone());
+        addressField.setText(selectedContact.getAddress());
+        emailField.setText(selectedContact.getEmail());
 
     }
 
