@@ -45,9 +45,9 @@ public class ListOfContactsController {
     @FXML
     private TableColumn<Contact, String> emailColumn;
     @FXML
-    private Button updateButton0;
+    private Button updateContactButton;
     @FXML
-    private Button deleteButton0;
+    private Button deleteContactButton;
 
 
 
@@ -59,7 +59,7 @@ public class ListOfContactsController {
 
 
 
-    
+
 
     public void initialize() {
 
@@ -70,11 +70,11 @@ public class ListOfContactsController {
         contacts.add(new Contact(4, "Erasmus", "Mcclure", "03 42 24 35 93", "P.O. Box 727, 3883 Facilisis, Ave", "Maecenas@sitametante.ca"));
         contacts.add(new Contact(5, "Heather", "Reilly", "04 09 48 25 34", "Ap #572-9149 Sed St.", "facilisi@odio.ca"));
         contacts.add(new Contact(6, "MacKenzie", "Leblanc", "04 88 98 01 83", "245 Sed Ave", "ac@estarcuac.ca"));
-        //contacts.add(new Contact(7, "Anne", "Quinn", "04 37 39 86 68", "Ap #842-6534 Eu Street", "dignissim.tempor.arcu@malesuadaid.co.uk"));
-        //contacts.add(new Contact(8, "Ulla", "Beard", "01 00 00 13 59", "8583 Ipsum Ave", "tincidunt.nunc.ac@nislsem.edu"));
-        //contacts.add(new Contact(9, "William", "Buckner", "06 09 33 76 71", "Ap #270-8558 Vehicula. St.", "neque@ante.org"));
-        //contacts.add(new Contact(10, "Hyatt", "Pruitt", "03 67 57 28 90", "2922 Pharetra Ave", "Donec.vitae.erat@velit.com"));
-       /* contacts.add(new Contact(11, "Uriah", "Collier", "01 23 04 37 24", "P.O. Box 430, 2814 Cursus Av.", "nonummy@nullavulputate.co.uk"));
+        contacts.add(new Contact(7, "Anne", "Quinn", "04 37 39 86 68", "Ap #842-6534 Eu Street", "dignissim.tempor.arcu@malesuadaid.co.uk"));
+        contacts.add(new Contact(8, "Ulla", "Beard", "01 00 00 13 59", "8583 Ipsum Ave", "tincidunt.nunc.ac@nislsem.edu"));
+        contacts.add(new Contact(9, "William", "Buckner", "06 09 33 76 71", "Ap #270-8558 Vehicula. St.", "neque@ante.org"));
+        contacts.add(new Contact(10, "Hyatt", "Pruitt", "03 67 57 28 90", "2922 Pharetra Ave", "Donec.vitae.erat@velit.com"));
+        contacts.add(new Contact(11, "Uriah", "Collier", "01 23 04 37 24", "P.O. Box 430, 2814 Cursus Av.", "nonummy@nullavulputate.co.uk"));
         contacts.add(new Contact(12, "Drake", "Weeks", "08 55 70 17 53", "Ap #379-2560 Sed, Road", "nunc.risus@sagittis.com"));
         contacts.add(new Contact(13, "Fredericka", "Russo", "01 39 91 49 35", "Ap #220-5616 Augue Rd.", "ut@nuncsit.edu"));
         contacts.add(new Contact(14, "Gareth", "Goff", "06 21 69 85 47", "Ap #811-6087 Vivamus Rd.", "nec.ante@mollisInteger.org"));
@@ -96,7 +96,7 @@ public class ListOfContactsController {
         contacts.add(new Contact(30, "Clementine", "Lane", "09 90 32 83 94", "9213 Amet, St.", "sodales.at@hendreritconsectetuercursus.ca"));
         contacts.add(new Contact(31, "Armand", "Valentine", "08 28 90 56 51", "259-2927 Quis Av.", "congue@Phasellusin.net"));
         contacts.add(new Contact(32, "Rogan", "Lynch", "09 84 06 56 04", "5253 Convallis Avenue", "ultrices@libero.edu"));
-        contacts.add(new Contact(33, "Garrison", "Park", "07 26 03 06 09", "P.O. Box 242, 4467 Nunc Road", "vel.sapien.imperdiet@lectus.co.uk"));*/
+        contacts.add(new Contact(33, "Garrison", "Park", "07 26 03 06 09", "P.O. Box 242, 4467 Nunc Road", "vel.sapien.imperdiet@lectus.co.uk"));
 
 
         System.out.println("Hej!");
@@ -108,27 +108,8 @@ public class ListOfContactsController {
         emailColumn.setCellValueFactory(new PropertyValueFactory<>("email"));
 
 
-        updateButton0.disableProperty().bind(Bindings.size(contacts).lessThan(1));
-        updateButton1.disableProperty().bind(Bindings.size(contacts).lessThan(2));
-        updateButton2.disableProperty().bind(Bindings.size(contacts).lessThan(3));
-        updateButton3.disableProperty().bind(Bindings.size(contacts).lessThan(4));
-        updateButton4.disableProperty().bind(Bindings.size(contacts).lessThan(5));
-        updateButton5.disableProperty().bind(Bindings.size(contacts).lessThan(6));
-        updateButton6.disableProperty().bind(Bindings.size(contacts).lessThan(7));
-        updateButton7.disableProperty().bind(Bindings.size(contacts).lessThan(8));
-        updateButton8.disableProperty().bind(Bindings.size(contacts).lessThan(9));
-        updateButton9.disableProperty().bind(Bindings.size(contacts).lessThan(10));
-
-        deleteButton0.disableProperty().bind(Bindings.size(contacts).lessThan(1));
-        deleteButton1.disableProperty().bind(Bindings.size(contacts).lessThan(2));
-        deleteButton2.disableProperty().bind(Bindings.size(contacts).lessThan(3));
-        deleteButton3.disableProperty().bind(Bindings.size(contacts).lessThan(4));
-        deleteButton4.disableProperty().bind(Bindings.size(contacts).lessThan(5));
-        deleteButton5.disableProperty().bind(Bindings.size(contacts).lessThan(6));
-        deleteButton6.disableProperty().bind(Bindings.size(contacts).lessThan(7));
-        deleteButton7.disableProperty().bind(Bindings.size(contacts).lessThan(8));
-        deleteButton8.disableProperty().bind(Bindings.size(contacts).lessThan(9));
-        deleteButton9.disableProperty().bind(Bindings.size(contacts).lessThan(10));
+        updateContactButton.setDisable(true);
+        deleteContactButton.setDisable(true);
 
 
 
@@ -167,174 +148,27 @@ public class ListOfContactsController {
 
 
 
-    public void update(int index, ActionEvent event) {
-
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("ContactView.fxml"));
-
-        Parent parent = null;
-
-        try {
-            parent = loader.load();
-        }
-        catch (IOException e) {
-            System.err.println(e.getMessage());
-        }
-
-        Scene scene = new Scene(parent);
-
-        ContactController controller = loader.getController();
-        controller.initTextFields(contacts.get(index));
-
-        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-
-        window.setScene(scene);
-        window.show();
-
-    }
-
-
-    public void actionUpdate0(ActionEvent event) {
-
-        update(0, event);
-
-        System.out.println(event.toString());
-
-    }
-
-
-    public void actionUpdate1(ActionEvent event) {
-
-        update(1, event);
-
-    }
-
-
-    public void actionUpdate2(ActionEvent event) {
-
-        update(2, event);
-
-    }
-
-
-    public void actionUpdate3(ActionEvent event) {
-
-        update(3, event);
-
-    }
-
-
-    public void actionUpdate4(ActionEvent event) {
-
-        update(4, event);
-
-    }
-
-
-    public void actionUpdate5(ActionEvent event) {
-
-        update(5, event);
-
-    }
-
-
-    public void actionUpdate6(ActionEvent event) {
-
-        update(6, event);
-
-    }
-
-
-    public void actionUpdate7(ActionEvent event) {
-
-        update(7, event);
-
-    }
-
-
-    public void actionUpdate8(ActionEvent event) {
-
-        update(8, event);
-
-    }
-
-
-    public void actionUpdate9(ActionEvent event) {
-
-        update(9, event);
-
-    }
-
-
-    public void actionDelete0(ActionEvent event) {
+    public void actionUpdateContact(ActionEvent event) {
 
 
 
     }
 
 
-    public void actionDelete1(ActionEvent event) {
+
+    public void actionDeleteContact(ActionEvent event) {
 
 
 
     }
 
 
-    public void actionDelete2(ActionEvent event) {
 
-
-
+    public void rowSelectedInTable()
+    {
+        updateContactButton.setDisable(false);
+        deleteContactButton.setDisable(false);
     }
-
-
-    public void actionDelete3(ActionEvent event) {
-
-
-
-    }
-
-
-    public void actionDelete4(ActionEvent event) {
-
-
-
-    }
-
-
-    public void actionDelete5(ActionEvent event) {
-
-
-
-    }
-
-
-    public void actionDelete6(ActionEvent event) {
-
-
-
-    }
-
-
-    public void actionDelete7(ActionEvent event) {
-
-
-
-    }
-
-
-    public void actionDelete8(ActionEvent event) {
-
-
-
-    }
-
-
-    public void actionDelete9(ActionEvent event) {
-
-
-
-    }
-
 
 
 
