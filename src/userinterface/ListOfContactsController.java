@@ -42,13 +42,53 @@ public class ListOfContactsController {
     @FXML
     private TableColumn<Contact, String> emailColumn;
     @FXML
+    private Button updateButton0;
+    @FXML
+    private Button deleteButton0;
+    @FXML
+    private Button updateButton1;
+    @FXML
+    private Button deleteButton1;
+    @FXML
+    private Button updateButton2;
+    @FXML
+    private Button deleteButton2;
+    @FXML
+    private Button updateButton3;
+    @FXML
+    private Button deleteButton3;
+    @FXML
+    private Button updateButton4;
+    @FXML
+    private Button deleteButton4;
+    @FXML
+    private Button updateButton5;
+    @FXML
+    private Button deleteButton5;
+    @FXML
+    private Button updateButton6;
+    @FXML
+    private Button deleteButton6;
+    @FXML
+    private Button updateButton7;
+    @FXML
+    private Button deleteButton7;
+    @FXML
+    private Button updateButton8;
+    @FXML
+    private Button deleteButton8;
+    @FXML
+    private Button updateButton9;
+    @FXML
+    private Button deleteButton9;
+    @FXML
     private Pagination pagination;
 
     public Pagination getPagination() {
         return pagination;
     }
 
-    //private ObservableList<Contact> contacts = FXCollections.observableList(new ArrayList<>());
+
     private ObservableList<Contact> contacts = FXCollections.observableList(new ArrayList<>());
 
 
@@ -118,8 +158,8 @@ public class ListOfContactsController {
     }
 
     public void updateView() {
-        ObservableList<Contact> ObserableList = FXCollections.observableList(model.getContactHandler().getContactList());
-        tableView.setItems(ObserableList);
+        ObservableList<Contact> ObservableList = FXCollections.observableList(model.getContactHandler().getContactList());
+        tableView.setItems(ObservableList);
     }
 
     public void actionSearch(ActionEvent event) {
