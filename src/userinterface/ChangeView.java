@@ -13,8 +13,7 @@ import java.io.IOException;
 public class ChangeView {
 
 
-    public  void newView(String path, ActionEvent event) {
-
+    public void newView(String path, ActionEvent event) {
 
         Parent parent = null;
 
