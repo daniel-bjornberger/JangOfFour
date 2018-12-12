@@ -2,6 +2,7 @@ package userinterface;
 
 import contacthandling.Contact;
 import databasehandling.DbHandler;
+import javafx.beans.binding.Bindings;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -116,10 +117,10 @@ public class ListOfContactsController {
         contacts.add(new Contact(4, "Erasmus", "Mcclure", "03 42 24 35 93", "P.O. Box 727, 3883 Facilisis, Ave", "Maecenas@sitametante.ca"));
         contacts.add(new Contact(5, "Heather", "Reilly", "04 09 48 25 34", "Ap #572-9149 Sed St.", "facilisi@odio.ca"));
         contacts.add(new Contact(6, "MacKenzie", "Leblanc", "04 88 98 01 83", "245 Sed Ave", "ac@estarcuac.ca"));
-        contacts.add(new Contact(7, "Anne", "Quinn", "04 37 39 86 68", "Ap #842-6534 Eu Street", "dignissim.tempor.arcu@malesuadaid.co.uk"));
-        contacts.add(new Contact(8, "Ulla", "Beard", "01 00 00 13 59", "8583 Ipsum Ave", "tincidunt.nunc.ac@nislsem.edu"));
-        contacts.add(new Contact(9, "William", "Buckner", "06 09 33 76 71", "Ap #270-8558 Vehicula. St.", "neque@ante.org"));
-        contacts.add(new Contact(10, "Hyatt", "Pruitt", "03 67 57 28 90", "2922 Pharetra Ave", "Donec.vitae.erat@velit.com"));
+        //contacts.add(new Contact(7, "Anne", "Quinn", "04 37 39 86 68", "Ap #842-6534 Eu Street", "dignissim.tempor.arcu@malesuadaid.co.uk"));
+        //contacts.add(new Contact(8, "Ulla", "Beard", "01 00 00 13 59", "8583 Ipsum Ave", "tincidunt.nunc.ac@nislsem.edu"));
+        //contacts.add(new Contact(9, "William", "Buckner", "06 09 33 76 71", "Ap #270-8558 Vehicula. St.", "neque@ante.org"));
+        //contacts.add(new Contact(10, "Hyatt", "Pruitt", "03 67 57 28 90", "2922 Pharetra Ave", "Donec.vitae.erat@velit.com"));
        /* contacts.add(new Contact(11, "Uriah", "Collier", "01 23 04 37 24", "P.O. Box 430, 2814 Cursus Av.", "nonummy@nullavulputate.co.uk"));
         contacts.add(new Contact(12, "Drake", "Weeks", "08 55 70 17 53", "Ap #379-2560 Sed, Road", "nunc.risus@sagittis.com"));
         contacts.add(new Contact(13, "Fredericka", "Russo", "01 39 91 49 35", "Ap #220-5616 Augue Rd.", "ut@nuncsit.edu"));
@@ -154,7 +155,34 @@ public class ListOfContactsController {
         emailColumn.setCellValueFactory(new PropertyValueFactory<>("email"));
 
 
-        //tableView.setItems(contacts);
+        updateButton0.disableProperty().bind(Bindings.size(contacts).lessThan(1));
+        updateButton1.disableProperty().bind(Bindings.size(contacts).lessThan(2));
+        updateButton2.disableProperty().bind(Bindings.size(contacts).lessThan(3));
+        updateButton3.disableProperty().bind(Bindings.size(contacts).lessThan(4));
+        updateButton4.disableProperty().bind(Bindings.size(contacts).lessThan(5));
+        updateButton5.disableProperty().bind(Bindings.size(contacts).lessThan(6));
+        updateButton6.disableProperty().bind(Bindings.size(contacts).lessThan(7));
+        updateButton7.disableProperty().bind(Bindings.size(contacts).lessThan(8));
+        updateButton8.disableProperty().bind(Bindings.size(contacts).lessThan(9));
+        updateButton9.disableProperty().bind(Bindings.size(contacts).lessThan(10));
+
+        deleteButton0.disableProperty().bind(Bindings.size(contacts).lessThan(1));
+        deleteButton1.disableProperty().bind(Bindings.size(contacts).lessThan(2));
+        deleteButton2.disableProperty().bind(Bindings.size(contacts).lessThan(3));
+        deleteButton3.disableProperty().bind(Bindings.size(contacts).lessThan(4));
+        deleteButton4.disableProperty().bind(Bindings.size(contacts).lessThan(5));
+        deleteButton5.disableProperty().bind(Bindings.size(contacts).lessThan(6));
+        deleteButton6.disableProperty().bind(Bindings.size(contacts).lessThan(7));
+        deleteButton7.disableProperty().bind(Bindings.size(contacts).lessThan(8));
+        deleteButton8.disableProperty().bind(Bindings.size(contacts).lessThan(9));
+        deleteButton9.disableProperty().bind(Bindings.size(contacts).lessThan(10));
+
+
+
+
+
+
+        tableView.setItems(contacts);
         model.getContactHandler().addListener((c) -> updateView());
         //tableView.setItems((ObservableList<Contact>) model.getContactHandler().getContactList())
     }
