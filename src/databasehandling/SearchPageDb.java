@@ -5,6 +5,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+/**Singleton class to search database.
+ * @author Pontus Fredriksson.
+ */
 public class SearchPageDb {
     private static SearchPageDb searchPageDbInstance = new SearchPageDb();
     private Connection connection;
@@ -14,19 +17,33 @@ public class SearchPageDb {
     private int hitAmount;
     private ResultSet resultSet;
 
+    /**Returns latest resultset */
     public ResultSet getResultSet(){
         return resultSet;
     }
-
+    //*Makes sure class is Singleton*/
     private SearchPageDb(){}
     public int getHitAmount(){
         return hitAmount;
     }
 
+    /**
+     * @return the singleton instance of the class.
+     */
     public static SearchPageDb getInstance(){
         return searchPageDbInstance;
     }
 
+    //ctrl +shift + A fix doc comment
+    /** Searches the databases for all rows LIKE searchString. Use when doing a new search.
+     * Saves inparameters in searchPageDbInstance.
+     * calls callDB().
+     * @param connection The connection to the database.
+     * @param searchString the string the database will try to match.
+     * @param pageNumber refered pagenumber to return, set to '1' if not relevant.
+     * @param hitsPerpage How many rows the UI shows.
+     * @return A java.sql.ResultSet.
+     */
     public boolean callDb(Connection connection,
                           String searchString,
                           int pageNumber,
