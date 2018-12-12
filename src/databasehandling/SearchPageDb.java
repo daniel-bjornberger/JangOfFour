@@ -126,7 +126,7 @@ public class SearchPageDb {
                         "phone LIKE '%"+ searchString +"%' OR "+
                         "address LIKE '%"+ searchString +"%' OR "+
                         "email LIKE '%"+ searchString +"%' "+
-                        "ORDER BY firstname " +
+                        "ORDER BY firstname COLLATE NOCASE " +          // TODO Fatta varför COLLATE fungerar!
                         "LIMIT " + hitsPerpage + " " +
                         "OFFSET " + ((pageNumber-1)*hitsPerpage) + //check if this formular is right
                         ";";

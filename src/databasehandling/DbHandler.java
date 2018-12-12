@@ -16,7 +16,7 @@ public class DbHandler {
     private int pagenumber = 1;
 
     /**Change here based on preferences for UI*/
-    private int hitsPerpage = 30; //declare as private in SearchPageDb, set it according to this.
+    private int hitsPerpage = 2147483647; //declare as private in SearchPageDb, set it according to this.
 
 
     private int hitAmount;

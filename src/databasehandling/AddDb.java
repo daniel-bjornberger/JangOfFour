@@ -12,7 +12,7 @@ public abstract class AddDb {
 
         String SQL = "INSERT INTO contacts(id, firstname, lastname, phone, address, email) VALUES(" +
                 contact.getId() + ", '" + contact.getFirstname() + "', '" + contact.getLastname() + "', '" + contact.getPhone()  + "', '" +
-                contact.getAddress() + "', '" + contact.getEmail() + "')";
+                contact.getAddress() + "', '" + contact.getEmail() + "');";
 
         System.out.println(SQL);        // TODO Check of SQL statement, shall eventually be deleted.
 
