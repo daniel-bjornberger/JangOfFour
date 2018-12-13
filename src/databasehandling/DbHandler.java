@@ -101,9 +101,12 @@ public class DbHandler {
             throw new Exception("Couldn't search Contacts.");
         }
     }
+
     /**Updates pagenumber.
-     * calls SearchPageDb.Calldb and adds results in ContactHandler.contactList. */
-    public void previousPage(Contact contact) throws Exception{
+     * calls SearchPageDb.Calldb and adds results in ContactHandler.contactList.
+     * @throws Exception if anything went wrong with the database.
+     */
+    public void previousPage() throws Exception{
         pagenumber--;
         if (SearchPageDb.getInstance().callDb(DBValidator.getCon(), searchString, pagenumber, hitsPerpage)==true){
             ContactHandler.getInstance().createFromString(SearchPageDb.getInstance().getResultSet());
