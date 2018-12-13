@@ -8,5 +8,4 @@ target
 MANIFEST.MF
 .idea
 *.iml
-*.jar
 bin
