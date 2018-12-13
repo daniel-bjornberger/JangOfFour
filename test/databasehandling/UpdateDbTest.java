@@ -11,5 +11,6 @@ class UpdateDbTest {
     void callDb() {
         DBValidator dbValidator = new DBValidator();
         assertTrue(UpdateDb.callDb(DBValidator.getCon(),new Contact(1,"Joel","Gunnarsson","070","Ring","joel@se")));
+
     }
 }
