@@ -8,7 +8,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import java.util.ArrayList;
 
 
 public class ListOfContactsController {
@@ -43,18 +42,7 @@ public class ListOfContactsController {
 
 
 
-    private ObservableList<Contact> contacts = FXCollections.observableList(new ArrayList<>());
-
-
-
-
-
-
-
-
-
     public void initialize() {
-
 
         firstNameColumn.setCellValueFactory(new PropertyValueFactory<>("firstname"));
         lastNameColumn.setCellValueFactory(new PropertyValueFactory<>("lastname"));
@@ -62,10 +50,8 @@ public class ListOfContactsController {
         addressColumn.setCellValueFactory(new PropertyValueFactory<>("address"));
         emailColumn.setCellValueFactory(new PropertyValueFactory<>("email"));
 
-
         updateContactButton.setDisable(true);
         deleteContactButton.setDisable(true);
-
 
         searchField.setText(DbHandler.getInstance().getSearchString());
 
@@ -74,22 +60,34 @@ public class ListOfContactsController {
 
     }
 
+
+
     public void updateView() {
+
         ObservableList<Contact> ObservableList = FXCollections.observableList(model.getContactHandler().getContactList());
         tableView.setItems(ObservableList);
+
     }
+
 
 
     public void actionSearch(ActionEvent event) {
+
         DbHandler.getInstance().searchPage(searchField.getText());
+
+        updateContactButton.setDisable(true);
+        deleteContactButton.setDisable(true);
+
     }
+
 
 
     public void actionListAllContacts(ActionEvent event) {
 
-        DbHandler.getInstance().searchPage("");         // TODO Ska denna metod implementeras på något annat sätt?
+        DbHandler.getInstance().searchPage("");
 
     }
+
 
 
     public void actionAddNewContact(ActionEvent event) {
@@ -129,40 +127,34 @@ public class ListOfContactsController {
 
             try {
                 DbHandler.getInstance().delete(model.getSelectedContact());
-            } catch (Exception e) {
+            }
+            catch (Exception e) {
                 System.err.println(e.getMessage());
             }
 
             updateContactButton.setDisable(true);
             deleteContactButton.setDisable(true);
-            
+
         }
 
-
-
-
     }
 
 
 
-    public void rowSelectedInTable()
-    {
+    public void rowSelectedInTable() {
+
         updateContactButton.setDisable(false);
         deleteContactButton.setDisable(false);
-    }
 
+    }
 
 
 
     public void onEnter(ActionEvent event) {
 
-        System.out.println("Enter i searchfield");
-
         actionSearch(event);
 
     }
-
-
 
 
 }
