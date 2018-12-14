@@ -4,6 +4,7 @@ import java.sql.*;
 public class DBValidator {
 
     private final static String dbConnection = "jdbc:sqlite:"+System.getProperty("user.dir")+"\\Database1";
+    //private final static String dbConnection = "jdbc:sqlite:Database1";
     private static Connection con;
     static {
 
