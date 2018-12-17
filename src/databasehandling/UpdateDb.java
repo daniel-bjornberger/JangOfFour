@@ -36,7 +36,7 @@ public abstract class UpdateDb {
 
         }
         // TODO change to 1?
-        if (rows < 0) {
+        if (rows <= 0) {
             return false;
         } else {
             return true;
