@@ -89,7 +89,8 @@ public class ContactController {
     }
 
 
-    /**
+    /** The method actionSave is used to trigger the update of an existing contact in the database, or the addition
+     * of a new contact to the database. Finally, the view is switched to the ListOfContactsView.
      * @param event The ActionEvent that triggered the save of a contact, in this case a click on the save button.
      */
     public void actionSave(ActionEvent event) {
@@ -121,7 +122,8 @@ public class ContactController {
     }
 
 
-    /**
+    /** The method actionCancel is used to switch back to the ListOfContactsView without doing any modification
+     * of the database.
      * @param event The ActionEvent that triggered the save of a contact, in this case a click on the cancel button.
      */
     public void actionCancel(ActionEvent event) {
