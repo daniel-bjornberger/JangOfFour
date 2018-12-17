@@ -123,6 +123,9 @@ public class ListOfContactsController {
             e.printStackTrace();
         }
 
+        updateContactButton.setDisable(true);
+        deleteContactButton.setDisable(true);
+
     }
 
 
@@ -152,8 +155,9 @@ public class ListOfContactsController {
     }
 
 
-    /**
-     * @param event
+    /** The method actionDeleteContact triggers a deletion of a selected contact, after the choice to delete the contact
+     * has been confirmed by clicking Yes in a popup window.
+     * @param event The ActionEvent that triggered the deletion of a contact, in this case a click on the Delete contact button.
      */
     public void actionDeleteContact(ActionEvent event) {
 
@@ -183,19 +187,23 @@ public class ListOfContactsController {
     }
 
 
-    /**
-     *
+    /** The method rowSelectedInTable enables the update and disable buttons, after a row in the TableView has been clicked.
      */
     public void rowSelectedInTable() {
 
-        updateContactButton.setDisable(false);
-        deleteContactButton.setDisable(false);
+        if (tableView.getSelectionModel().getSelectedItem() != null) {
+
+            updateContactButton.setDisable(false);
+            deleteContactButton.setDisable(false);
+
+        }
+
 
     }
 
 
-    /**
-     * @param event
+    /** The method onEnter is used to trigger a search in the database when pressing the enter key in the search field.
+     * @param event The ActionEvent that triggered the search, in this case pressing the enter key om the keyboard.
      */
     public void onEnter(ActionEvent event) {
 
