@@ -2,12 +2,15 @@ package contacthandling;
 
 /**
  * @author Bob.
+ * run tests where you make a contact or you check for contact info entry in right format
  */
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
+
 class ContactCreateTest {
+
 
     @Test
     public void createAContactWithCommonValuesForAContact() {

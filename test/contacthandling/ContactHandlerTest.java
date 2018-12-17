@@ -39,9 +39,9 @@ public class ContactHandlerTest {
         File file = new File("Database1");
         File fileBackup = new File("DatabaseBackup");
         if (file.delete()) {
-            File file1 = new File("database1");
+            File file1 = new File("Database1");
             System.out.println("HEJ");
-            fileBackup.renameTo(file);
+            fileBackup.renameTo(file1);
         }
     }
 
