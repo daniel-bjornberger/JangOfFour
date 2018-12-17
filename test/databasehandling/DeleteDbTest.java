@@ -13,8 +13,14 @@ class DeleteDbTest {
 
     @Test
     void callDb() {
-        DBValidator dbValidator=new DBValidator();
-        Contact contact=new Contact(1000,"Joel","Gunnarsson","098098098","Ringvägen","joel@hotmail.com");
+        DBValidator dbValidator = new DBValidator();
+        Contact contact= null;
+        try {
+            contact=new Contact(DbHandler.getInstance().generateID(),"Adam","Sundström","098098098","Ringvägen","joel@hotmail.com");
+        } catch (Exception e){
+            System.out.println(e.getMessage());
+            fail("Could not create Contact, Test Failed");
+        }
         AddDb.callDb(DBValidator.getCon(),contact);
         assertTrue(DeleteDb.callDb(DBValidator.getCon(),contact));
         assertTrue(AddDb.callDb(DBValidator.getCon(),contact));
