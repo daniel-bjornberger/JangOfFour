@@ -17,7 +17,7 @@ public class ContactListMain extends Application {
         DBValidator dbValidator = new DBValidator();
 
         Parent root = FXMLLoader.load(getClass().getResource("ListOfContactsView.fxml"));
-
+        //Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("ListOfContactsView.fxml"));
         stage.setTitle("Jang Of Four Contact List");
 
         Scene scene = new Scene(root);
