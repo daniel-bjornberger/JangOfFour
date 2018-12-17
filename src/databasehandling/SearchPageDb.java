@@ -136,6 +136,7 @@ public class SearchPageDb {
                 System.out.println("- now in callDb(). resultSet: " + resultSet);
             } catch (SQLException sqle) {
                 System.err.println(sqle.getMessage());
+                return false;
             } finally {
 
             }

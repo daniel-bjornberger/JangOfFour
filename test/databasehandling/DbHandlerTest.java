@@ -94,16 +94,26 @@ class DbHandlerTest {
         Contact contact=new Contact(-1,"TEST9999",
                 "TEST", "TEST", "TEST", "TEST");
         try {
-            DbHandler.getInstance().delete(contact);
+            DbHandler.getInstance().update(contact);
         } catch (Exception e) {
             response = e.getMessage();
         }
-        assertEquals("Couldn't delete Contact in database", response );
+        assertEquals("Couldn't update Contact in database.", response );
     }
 
     @Test
-    void searchPage() {
+    void AssertDBHandlerSearchPageThrowsExceptionWhenFailing() {
+
+        String response= "";
+        try {
+            DbHandler.getInstance().searchPage("SearchTerm");
+        } catch (Exception e) {
+            response = e.getMessage();
+        }
+        assertEquals("Couldn't search Database", response );
+
     }
+
 
     @Test
     void nextPage() {
