@@ -9,8 +9,14 @@ import java.io.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * @author Pontus Fredriksson
+ */
 class DbHandlerTest {
 
+    /**Makes a backup of the database
+     * @throws IOException
+     */
     @BeforeEach
     void setUp() throws IOException {
         //DBValidator dbValidator = new DBValidator();
@@ -32,7 +38,9 @@ class DbHandlerTest {
     }
 
 
-
+    /**
+     * Deletes the database and changes name of the backup to originial name 'Database1'
+     */
     @AfterEach
     void tearDown() {
         File file = new File("Database1");
@@ -67,13 +75,30 @@ class DbHandlerTest {
         }
         assertEquals("Couldn't add Contact in database", response );
     }
-
     @Test
-    void delete() {
+    void AssertDBHandlerDeleteThrowsExceptionWhenFailing() {
+        String response= "";
+        Contact contact=new Contact(-1, "TEST9999",
+                "TEST", "TEST", "TEST", "TEST");
+        try {
+            DbHandler.getInstance().delete(contact);
+        } catch (Exception e) {
+            response = e.getMessage();
+        }
+        assertEquals("Couldn't delete Contact in database", response );
     }
 
     @Test
-    void update() {
+    void AssertDBHandlerUpdateThrowsExceptionWhenFailing() {
+        String response= "";
+        Contact contact=new Contact(-1,"TEST9999",
+                "TEST", "TEST", "TEST", "TEST");
+        try {
+            DbHandler.getInstance().delete(contact);
+        } catch (Exception e) {
+            response = e.getMessage();
+        }
+        assertEquals("Couldn't delete Contact in database", response );
     }
 
     @Test
