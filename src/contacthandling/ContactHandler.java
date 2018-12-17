@@ -9,26 +9,30 @@ import java.sql.*;
 
 import java.sql.ResultSet;
 
+/** ContactHandler class to work with and return the given list of contacts
+ * @author Bob
+ */
 public class ContactHandler implements Observable {
     private ArrayList<InvalidationListener> invalidationlisteners = new ArrayList<>();
     private List <Contact> contactList = new ArrayList<>();
     private static ContactHandler ContactHandlerInstance = new ContactHandler();
     private ContactHandler() {}
 
+    /** return the singleton instance of the class*/
     public static ContactHandler getInstance() {
         return ContactHandlerInstance;
     }
 
+    /**
+     * @param rs The passed ResultSet object from the processed SQL Query
+     * @return contactList -- the prepared contact list from the given ResultSet rs
+     */
     public List<Contact> createFromString (ResultSet rs) throws SQLException {
-        //given: SearchPageDb.getInstance.Result
-        //create one or more contact from that
-        System.out.println("createFromString...");
+        System.out.println("now create and return contactList...");
         ResultSet myResultSet= rs;
-        System.out.println("see current contactsList. It is: " + contactList);
-
+        //System.out.println("current contactsList is: " + contactList);
         //remove all contacts from Contact List first
         contactList.clear();
-
         while (rs.next()) {
             contactList.add(new Contact(
                     rs.getInt("id"),
@@ -38,21 +42,19 @@ public class ContactHandler implements Observable {
                     rs.getString("address"),
                     rs.getString("email")
             ));
-            System.out.println("- added 1 contact to contactList");
+            //System.out.println("update the new contactList with one contact...");
             ;
         }
-
         System.out.println("check if contactList is ready...");
-        //System.out.println("now it is: " + contactList);
-        displayAllContacts();
+        //displayAllContacts();
         notifyListeners();
         return (contactList);
     }
 
-    /**
-     * display all contacts currently in contactList
-     */
+
+    /** display all contacts currently in contactList */
     public void displayAllContacts () {
+        System.out.println("Display all contacts:");
         int count = 0;
         for (Contact contact: contactList) {
             System.out.println("Contact " + count + ": " + contact);
