@@ -100,7 +100,11 @@ public class ListOfContactsController {
      */
     public void actionSearch(ActionEvent event) {
 
-        DbHandler.getInstance().searchPage(searchField.getText());
+        try {
+            DbHandler.getInstance().searchPage(searchField.getText());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         updateContactButton.setDisable(true);
         deleteContactButton.setDisable(true);
@@ -113,7 +117,11 @@ public class ListOfContactsController {
      */
     public void actionListAllContacts(ActionEvent event) {
 
-        DbHandler.getInstance().searchPage("");
+        try {
+            DbHandler.getInstance().searchPage("");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
     }
 

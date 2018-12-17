@@ -1,5 +1,6 @@
 package databasehandling;
 import contacthandling.*;
+import sun.reflect.annotation.ExceptionProxy;
 
 /** Singleton class to handle access classes to the Database
  * @author Pontus Fredriksson.
@@ -69,7 +70,7 @@ public class DbHandler {
     }
     /**Sets pagenumber to 1.
      * Calls SearchPagedb.CallDb() and adds results in ContactHandler.contactList*/
-    public void searchPage(String searchString){
+    public void searchPage(String searchString) throws Exception {
         this.searchString = searchString;
         pagenumber=1;
         System.out.println("here");
@@ -86,7 +87,7 @@ public class DbHandler {
             System.out.println("DbHandler.searchpage ran.");
         }
         }catch (Exception e) {
-            System.out.println(e.getMessage());
+            throw new Exception("Couldn't search Database");
 
         }
     }
