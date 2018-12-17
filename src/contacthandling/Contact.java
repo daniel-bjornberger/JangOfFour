@@ -54,7 +54,7 @@ public class Contact {
 
         //check to see that address has 5 or more characters
         if (givenAddress.length() < 5) {
-            System.err.println("ignored error: Address must have 5 or mor digits ");
+            System.err.println("ignored error: Address must have 5 or mor characters ");
             //throw new IllegalArgumentException();
         }
 

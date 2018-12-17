@@ -5,10 +5,45 @@ package contacthandling;
  */
 
 import databasehandling.*;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import java.io.*;
 
 public class ContactHandlerTest {
 
+    //BeforeEach method written by Pontus
+    @BeforeEach
+    void setUp() throws IOException {
+        //DBValidator dbValidator = new DBValidator();
+        InputStream is = null;
+        OutputStream os = null;
+        try {
+            is = new FileInputStream("Database1");
+            os = new FileOutputStream("DatabaseBackup");
+            byte[] buffer = new byte[1024];
+            int length;
+            while ((length = is.read(buffer)) > 0) {
+                os.write(buffer, 0, length);
+            }
+        } finally {
+            is.close();
+            os.close();
+        }
+    }
+
+    //AfterEach method written by Pontus
+    @AfterEach
+    void tearDown() {
+        File file = new File("Database1");
+        File fileBackup = new File("DatabaseBackup");
+        if (file.delete()) {
+            File file1 = new File("database1");
+            System.out.println("HEJ");
+            fileBackup.renameTo(file);
+        }
+    }
 
     @Test
     public void addAContactAndDisplayTheContactList() {
