@@ -35,8 +35,11 @@ class DbHandlerTest {
                 is.close();
                 os.close();
             }
+        File file = new File("Database1");
+        if(file.delete()){
+            System.out.println("DataBase1 Deleted");
+        }
     }
-
 
     /**
      * Deletes the database and changes name of the backup to originial name 'Database1'
@@ -45,11 +48,10 @@ class DbHandlerTest {
     void tearDown() {
         File file = new File("Database1");
         File fileBackup = new File("DatabaseBackup");
-        if(file.delete()) {
-            File file1 = new File("database1");
-            System.out.println("HEJ");
+        System.out.println("Changed name 'DatabaseBackup to database1");
+
             fileBackup.renameTo(file);
-        }
+            System.out.println("DatabaseBackup renamed to Database1");
 
 
     }
@@ -124,7 +126,14 @@ class DbHandlerTest {
     }
 
     @Test
-    void generateID() {
+    void AssertDBHandlerGenerateIDThrowsExceptionWhenFailing() {
+        String response= "";
+        try {
+            DbHandler.getInstance().generateID();
+        } catch (Exception e) {
+            response = e.getMessage();
+        }
+        assertEquals("Couldnt Generate ID.", response );
     }
 
     @Test
