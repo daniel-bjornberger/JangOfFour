@@ -42,7 +42,7 @@ public class ContactHandlerTest {
             File file1 = new File("Database1");
             System.out.println("HEJ");
             fileBackup.renameTo(file1);
-        }
+        }else {System.err.println("Couldnt delete file");}
     }
 
     @Test
