@@ -12,7 +12,7 @@ class UpdateDbTest {
 
     @Test
     void callDb() {
-        DBValidator dbValidator = new DBValidator();
+
         Contact contact= null;
         try {
             contact = new Contact(DbHandler.getInstance().generateID(),"Joel","Gunnarsson","070","Ring","joel@se");

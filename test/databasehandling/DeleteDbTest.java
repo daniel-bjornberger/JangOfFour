@@ -13,7 +13,7 @@ class DeleteDbTest {
 
     @Test
     void callDb() {
-        DBValidator dbValidator = new DBValidator();
+
         Contact contact= null;
         try {
             contact=new Contact(DbHandler.getInstance().generateID(),"Adam","Sundström","098098098","Ringvägen","joel@hotmail.com");

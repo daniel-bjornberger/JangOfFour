@@ -11,7 +11,7 @@ class DBValidatorTest {
 
     @Test
     void getCon() {
-        DBValidator dbValidator=new DBValidator();
+
         assertTrue(DBValidator.getCon()!=null);
     }
 
