@@ -25,5 +25,6 @@ class UpdateDbTest {
         assertTrue(UpdateDb.callDb(DBValidator.getCon(),contact));
 
 
+
     }
 }
