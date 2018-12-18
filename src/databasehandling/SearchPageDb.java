@@ -130,22 +130,16 @@ public class SearchPageDb {
                         "LIMIT " + hitsPerpage + " " +
                         "OFFSET " + ((pageNumber-1)*hitsPerpage) + //check if this formular is right
                         ";";
-                System.out.println(query); // Säkra att du skrivit rätt, tas bort senare.
+               // System.out.println(query); // Säkra att du skrivit rätt, tas bort senare.
                 stm = connection.createStatement();
                 resultSet = stm.executeQuery(query);
                 System.out.println("- now in callDb(). resultSet: " + resultSet);
+                return true;
             } catch (SQLException sqle) {
                 System.err.println(sqle.getMessage());
                 return false;
-            } finally {
-
             }
         }
-
-        if (hitAmount < 0) {
-            return false;
-        } else {
-            return true;
-        }
+     return false;
     }
 }

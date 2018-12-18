@@ -1,4 +1,5 @@
 package databasehandling;
+import java.nio.file.FileSystemNotFoundException;
 import java.sql.*;
 
 /** Class that loads the driver class and handles the connection to the database.
@@ -49,6 +50,21 @@ public class DBValidator {
     /** The method hasConnection checks if a connection to the database has been established.
      * @return Boolean value, true if a connection was successfully established, fail if no connection has been established.
      */
+    public static void closeConnection(){
+
+        if ( con!= null) {
+            try {
+                con.close();
+                System.out.println("Connection closed");
+
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+
+
+    }
+
     public boolean hasConnection(){
         if (con != null){
             return true;

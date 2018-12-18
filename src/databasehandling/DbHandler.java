@@ -73,10 +73,6 @@ public class DbHandler {
     public void searchPage(String searchString) throws Exception {
         this.searchString = searchString;
         pagenumber=1;
-        System.out.println("here");
-
-        try {
-            System.out.println(searchString);
         if  (SearchPageDb.getInstance().callDb(DBValidator.getCon(), searchString, pagenumber, hitsPerpage)) {
             //is sending empty resultset:
             ContactHandler.getInstance().createFromString(SearchPageDb.getInstance().getResultSet());
@@ -85,11 +81,10 @@ public class DbHandler {
             //System.out.println("resultset: " +
             //        );
             System.out.println("DbHandler.searchpage ran.");
-        }
-        }catch (Exception e) {
+        }else {
             throw new Exception("Couldn't search Database");
-
         }
+
     }
     /**Updates pagenumber.
      * calls SearchPageDb.Calldb and adds results in ContactHandler.contactList. */
