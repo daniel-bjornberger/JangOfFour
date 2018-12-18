@@ -3,18 +3,24 @@ package databasehandling;
 import contacthandling.Contact;
 import java.sql.*;
 
+/** An abstract class that is used by the DbHandler instance when a new contact shall be added to the database.
+ * @author Daniel Björnberger
+ */
 public abstract class AddDb {
 
 
-    public static boolean callDb(Connection connection,Contact contact) {
+    /** The method callDb is used when a contact shall be added to the database.
+     * @param connection The connection to the database.
+     * @param contact The contact that shall be added to the database.
+     * @return Returns a boolean value, true if the contact was added successfully, false if the addition of the contact failed.
+     */
+    public static boolean callDb(Connection connection, Contact contact) {
 
         int rowCount = -1;
 
         String SQL = "INSERT INTO contacts(id, firstname, lastname, phone, address, email) VALUES(" +
                 contact.getId() + ", '" + contact.getFirstname() + "', '" + contact.getLastname() + "', '" + contact.getPhone()  + "', '" +
                 contact.getAddress() + "', '" + contact.getEmail() + "');";
-
-        System.out.println(SQL);        // TODO Check of SQL statement, shall eventually be deleted.
 
 
         if (connection != null) {
@@ -24,22 +30,15 @@ public abstract class AddDb {
 
                 rowCount = stm.executeUpdate(SQL);
 
-                stm.close();                // TODO Is this correct? What about 'finally' below?
+                stm.close();
             }
             catch (SQLException e) {
                 System.err.println(e.getMessage());
             }
 
-
-
-            /*finally {
-
-            }*/
-
-
         }
 
-        return rowCount == 1;                // TODO Check how the return statement shall be written. Is rowCount used correctly?
+        return rowCount == 1;
 
     }
 
