@@ -2,13 +2,17 @@ package databasehandling;
 import java.nio.file.FileSystemNotFoundException;
 import java.sql.*;
 
-/** Establish a Connection to a Sqlite3 Database through Interface java.sql.Connection. When create instance ,method getConnection is called,
- * String dbConnection is the path where the Database is located.
- * @author Joel Gunnarsson
+/** Class that loads the driver class and handles the connection to the database.
+ * @author
  */
 public class DBValidator {
 
-    private final static String dbConnection = "jdbc:sqlite:"+System.getProperty("user.dir")+"\\Database1";
+    /** The database URL.
+     */
+    private final static String dbConnection = "jdbc:sqlite:" + System.getProperty("user.dir") + "\\Database1";
+
+    /** The connection to the database.
+     */
     private static Connection con;
     static {
 
@@ -19,15 +23,23 @@ public class DBValidator {
         }
     }
 
+    /** The method getCon returns the connection to the database.
+     * @return The connection to the database.
+     */
     public static Connection getCon() {
         return con;
     }
 
+    /** Constructor for the class DBValidator.
+     */
     public DBValidator() {
         getConnection();
     }
 
+    /** The method getConnection establishes a connection to the database.
+     */
     private void getConnection() {
+
         try {
             con = DriverManager.getConnection(dbConnection);
         } catch (SQLException sqle) {
@@ -50,6 +62,9 @@ public class DBValidator {
 
     }
 
+    /** The method hasConnection checks if a connection to the database has been established.
+     * @return Boolean value, true if a connection was successfully established, fail if no connection has been established.
+     */
     public boolean hasConnection(){
         if (con != null){
             return true;
