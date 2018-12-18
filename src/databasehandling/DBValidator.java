@@ -1,4 +1,5 @@
 package databasehandling;
+import java.nio.file.FileSystemNotFoundException;
 import java.sql.*;
 
 public class DBValidator {
@@ -28,6 +29,21 @@ public class DBValidator {
         } catch (SQLException sqle) {
             System.err.println(sqle.getMessage());
         }
+    }
+
+    public static void closeConnection(){
+
+        if ( con!= null) {
+            try {
+                con.close();
+                System.out.println("Connection closed");
+
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+
+
     }
 
     public boolean hasConnection(){

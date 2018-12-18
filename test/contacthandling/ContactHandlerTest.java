@@ -38,6 +38,7 @@ public class ContactHandlerTest {
     void tearDown() {
         File file = new File("Database1");
         File fileBackup = new File("DatabaseBackup");
+        DBValidator.closeConnection();
         if (file.delete()) {
             File file1 = new File("Database1");
             System.out.println("HEJ");

@@ -1,9 +1,7 @@
 package databasehandling;
 
 import contacthandling.Contact;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
 import java.io.*;
 
@@ -14,12 +12,12 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 class DbHandlerTest {
 
-    /**Makes a backup of the database
+    /**Makes a backup of the database and deletes the first instance
      * @throws IOException
      */
     @BeforeEach
-    void setUp() throws IOException {
-        //DBValidator dbValidator = new DBValidator();
+     void setUp() throws IOException {
+
 
             InputStream is = null;
             OutputStream os = null;
@@ -42,23 +40,25 @@ class DbHandlerTest {
     }
 
     /**
-     * Deletes the database and changes name of the backup to originial name 'Database1'
+     *Changes name of the backup to originial name 'Database1'
      */
     @AfterEach
     void tearDown() {
+
         File file = new File("Database1");
         File fileBackup = new File("DatabaseBackup");
-        System.out.println("Changed name 'DatabaseBackup to database1");
+        System.out.print("Change name 'DatabaseBackup to Database1: ");
 
-            fileBackup.renameTo(file);
-            System.out.println("DatabaseBackup renamed to Database1");
-
+           if(fileBackup.renameTo(file)) {
+               System.out.println("DatabaseBackup renamed to Database1");
+           }
 
     }
 
     @Test
     void getPageAmount() {
     }
+
 
     @Test
     void getInstance() {
