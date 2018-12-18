@@ -1,9 +1,8 @@
 package databasehandling;
-import java.nio.file.FileSystemNotFoundException;
 import java.sql.*;
 
 /** Class that loads the driver class and handles the connection to the database.
- * @author
+ * @author Joel Gunnarsson
  */
 public class DBValidator {
 
