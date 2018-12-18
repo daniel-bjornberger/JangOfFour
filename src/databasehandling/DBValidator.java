@@ -47,9 +47,6 @@ public class DBValidator {
         }
     }
 
-    /** The method hasConnection checks if a connection to the database has been established.
-     * @return Boolean value, true if a connection was successfully established, fail if no connection has been established.
-     */
     public static void closeConnection(){
 
         if ( con!= null) {
@@ -65,6 +62,9 @@ public class DBValidator {
 
     }
 
+    /** The method hasConnection checks if a connection to the database has been established.
+     * @return Boolean value, true if a connection was successfully established, fail if no connection has been established.
+     */
     public boolean hasConnection(){
         if (con != null){
             return true;
