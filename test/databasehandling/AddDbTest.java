@@ -16,13 +16,9 @@ class AddDbTest {
     }
 
     @Test
-    void callDbAddContact() {
+    void callDbAddContact() throws Exception {
         DBValidator dbValidator=new DBValidator();
-        assertTrue(AddDb.callDb(DBValidator.getCon(),new Contact(1000,"Joel","Gunnarsson","098","Ringvägen","joel@hotmail.com")));
+        assertTrue(AddDb.callDb(DBValidator.getCon(),new Contact(DbHandler.getInstance().generateID(),"Joel","Gunnarsson","098","Ringvägen","joel@hotmail.com")));
     }
-    @Test
-    void callDbAddSameContact() {
-        DBValidator dbValidator=new DBValidator();
-        assertFalse(AddDb.callDb(DBValidator.getCon(),new Contact(1000,"Joel","Gunnarsson","098","Ringvägen","joel@hotmail.com")));
-    }
+
 }

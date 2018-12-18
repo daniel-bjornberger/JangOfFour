@@ -2,7 +2,8 @@ package databasehandling;
 import java.nio.file.FileSystemNotFoundException;
 import java.sql.*;
 
-/** Establish a Connection to a Sqlite3 Database through Interface java.sql.Connection. When create instance method getConnection is called, 
+/** Establish a Connection to a Sqlite3 Database through Interface java.sql.Connection. When create instance ,method getConnection is called,
+ * String dbConnection is the path where the Database is located.
  * @author Joel Gunnarsson
  */
 public class DBValidator {
