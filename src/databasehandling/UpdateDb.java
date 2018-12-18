@@ -4,9 +4,13 @@ import contacthandling.Contact;
 
 import java.sql.*;
 
-
+/**
+ * Given the database connection and a given contact detail object,
+ * update the contact with new contact detail information.
+ * Return true if succeeded, false otherwise
+ * @author Joel
+ */
 public abstract class UpdateDb {
-
 
 
     public static boolean callDb(Connection connection,Contact contact) {

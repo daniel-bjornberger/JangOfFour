@@ -11,7 +11,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ContactCreateTest {
 
-
     @Test
     public void createAContactWithCommonValuesForAContact() {
         try {

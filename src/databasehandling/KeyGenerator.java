@@ -6,7 +6,14 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Objects;
 
+/**create an integer to be used as an Id
+ based on the contact table's largest Id found in table
+ using an SQL query. Return either this integer or
+ if table is empty, then reutrn integer "1" to be used.
+ @author Joel
+ */
 public abstract class KeyGenerator {
+
     public static int callDB(Connection connection){
 
         if (connection != null) {

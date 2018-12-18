@@ -4,7 +4,12 @@ import contacthandling.Contact;
 import java.sql.*;
 
 public abstract class DeleteDb {
-
+    /**
+    Given the database connection and a given contact detail object,
+    delete this contact from table.
+    Base the deletion on the contact's Id.
+    @author Joel
+    */
     public static boolean callDb(Connection connection,Contact contact) {
 
         int rowCount = -1;
