@@ -24,6 +24,7 @@ class DeleteDbTest {
         AddDb.callDb(DBValidator.getCon(),contact);
         assertTrue(DeleteDb.callDb(DBValidator.getCon(),contact));
         assertTrue(AddDb.callDb(DBValidator.getCon(),contact));
+        DeleteDb.callDb(DBValidator.getCon(),contact);
 
     }
 }

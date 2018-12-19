@@ -20,11 +20,11 @@ class AddDbTest {
 
         DBValidator dbValidator = new DBValidator();
 
-        Contact newContact = new Contact(-34567, "Joel","Gunnarsson","098","Ringvägen","joel@hotmail.com");
+        Contact newContact = new Contact(DbHandler.getInstance().generateID(), "Joel","Gunnarsson","098","Ringvägen","joel@hotmail.com");
 
         assertTrue(AddDb.callDb(DBValidator.getCon(), newContact));
 
-        System.out.println("HEJ!");
+
 
         if(DeleteDb.callDb(DBValidator.getCon(), newContact)){
             System.out.println("Delete ok!");
@@ -36,7 +36,7 @@ class AddDbTest {
     @Test
     void testCallDbAddContactFail() throws Exception {
 
-        Contact newContact = new Contact(-34567, "Joel","Gunnarsson","098","Ringvägen","joel@hotmail.com");
+        Contact newContact = new Contact(DbHandler.getInstance().generateID(), "Joel","Gunnarsson","098","Ringvägen","joel@hotmail.com");
 
         AddDb.callDb(DBValidator.getCon(), newContact);
 
