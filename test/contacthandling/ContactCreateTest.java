@@ -25,11 +25,12 @@ class ContactCreateTest {
     @Test
     public void makeSureContactFirstNameIsNotEmpty() {
         try {
-            new Contact(76543847, "Joel", "Gunnarson","0736262671", "Address1","bob@fripost.org");
+            new Contact(76543847, "", "Gunnarson","0736262671", "Address1","bob@fripost.org");
+            //fail("Exception was expected for empty first name");
         } catch (Exception e) {
-            fail("Exception was expected for empty first name");
             System.err.println("Exception: " + e);
         }
+
     }
 
     @Test

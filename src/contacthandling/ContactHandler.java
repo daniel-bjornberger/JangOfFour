@@ -28,7 +28,7 @@ public class ContactHandler implements Observable {
      * @return contactList -- the prepared contact list from the given ResultSet rs
      */
     public List<Contact> createFromString (ResultSet rs) throws SQLException {
-        System.out.println("now create and return contactList...");
+        //System.out.println("now create and return contactList...");
         ResultSet myResultSet= rs;
         //System.out.println("current contactsList is: " + contactList);
         //remove all contacts from Contact List first
@@ -45,7 +45,7 @@ public class ContactHandler implements Observable {
             //System.out.println("update the new contactList with one contact...");
             ;
         }
-        System.out.println("check if contactList is ready...");
+        //System.out.println("check if contactList is ready...");
         //displayAllContacts();
         notifyListeners();
         return (contactList);
@@ -54,10 +54,10 @@ public class ContactHandler implements Observable {
 
     /** display all contacts currently in contactList */
     public void displayAllContacts () {
-        System.out.println("Display all contacts:");
+        //System.out.println("Display all contacts:");
         int count = 0;
         for (Contact contact: contactList) {
-            System.out.println("Contact " + count + ": " + contact);
+            //System.out.println("Contact " + count + ": " + contact);
             count++;
         }
     }
@@ -79,7 +79,7 @@ public class ContactHandler implements Observable {
     public void clear (List<Contact> givenContactList) {
         givenContactList.clear();
         notifyListeners();
-        System.out.println("Cleared contact list");
+        //System.out.println("Cleared contact list");
     }
 
     // TODO
