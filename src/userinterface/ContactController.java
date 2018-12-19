@@ -69,15 +69,13 @@ public class ContactController {
      * corresponding contact data. */
     public void initialize() {
 
-        Pattern atSign = Pattern.compile(".*@.*");
-        Pattern period = Pattern.compile(".*[.].*");
+        Pattern emailPattern = Pattern.compile("[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+[.][a-zA-Z]+");
 
         saveButton.disableProperty().bind((firstNameField.textProperty().length().lessThan(2))
                 .or(lastNameField.textProperty().length().lessThan(2))
                 .or(phoneField.textProperty().length().lessThan(9))
                 .or(addressField.textProperty().length().lessThan(5))
-                .or(patternTextFieldBinding(emailField, period))
-                .or(patternTextFieldBinding(emailField, atSign)));
+                .or(patternTextFieldBinding(emailField, emailPattern)));
 
         selectedContact = model.getSelectedContact();
 
