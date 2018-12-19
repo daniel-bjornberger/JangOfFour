@@ -19,14 +19,10 @@ public class DbHandler {
     /**Change here based on preferences for UI*/
     private int hitsPerpage = 2147483647; //declare as private in SearchPageDb, set it according to this.
 
-
     private int hitAmount;
 
     /**Makes sure class is singleton*/
     private DbHandler(){}
-
-
-
 
     /**Use to access DBhandler
      * @return the singleton instance of DbHandler
@@ -85,21 +81,18 @@ public class DbHandler {
         this.searchString = searchString;
         pagenumber=1;
         if  (SearchPageDb.getInstance().callDb(DBValidator.getCon(), searchString, pagenumber, hitsPerpage)) {
-            //is sending empty resultset:
             ContactHandler.getInstance().createFromString(SearchPageDb.getInstance().getResultSet());
-            //SearchPageDb.getInstance().getResultSet()
-            //System.out.println("resultset: " +
-            //        );
-            System.out.println("DbHandler.searchpage ran.");
+
         }else {
             throw new Exception("Couldn't search Database");
         }
 
     }
 
-
-
-    /**Calls Keygenerator.callDB and returns a ID not used in the database.*/
+    /**Calls Keygenerator.callDB.
+     * @return a ID not used in the database.
+     * @throws Exception
+     */
     public int generateID()throws Exception{
         int result = KeyGenerator.callDB(DBValidator.getCon());
         if (result>=0){

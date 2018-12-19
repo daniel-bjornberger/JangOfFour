@@ -79,24 +79,16 @@ public class SearchPageDb {
                         " OR address LIKE '%"+ searchString +"%'"+
                         " OR email LIKE '%"+ searchString +"%'"+
                         ";";
-                System.out.println(query); // Säkra att du skrivit rätt, tas bort senare.
                 stm = connection.createStatement();
                 resultSet = stm.executeQuery(query);
 
-                System.out.println("- now in callDb(Connection connection,\n" +
-                        "                          String searchString,\n" +
-                        "                          int pageNumber,\n" +
-                        "                          int hitsPerpage).\n\n" +
-                        " resultSet: " + resultSet);
 
 
 
                 hitAmount = 0;
                 while (resultSet.next()) {
-                    System.out.println("- row id: " + resultSet.getInt("id"));
                     hitAmount ++;
                 }
-                System.out.println("# of hits: " + hitAmount);
 
             } catch (SQLException sqle) {
                 System.err.println(sqle.getMessage());
@@ -130,7 +122,6 @@ public class SearchPageDb {
 
                 stm = connection.createStatement();
                 resultSet = stm.executeQuery(query);
-                System.out.println("- now in callDb(). resultSet: " + resultSet);
                 return true;
             } catch (SQLException sqle) {
                 System.err.println(sqle.getMessage());
