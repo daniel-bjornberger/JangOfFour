@@ -6,8 +6,8 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 
-/** Test class for
- *
+/** Test class for the AddDb class.
+ * @author Daniel Björnberger
  */
 class AddDbTest {
 
