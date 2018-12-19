@@ -3,10 +3,12 @@ package databasehandling;
 import contacthandling.Contact;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Test;
-
-
 import static org.junit.jupiter.api.Assertions.*;
 
+
+/** Test class for
+ *
+ */
 class AddDbTest {
 
     @AfterAll
@@ -45,5 +47,6 @@ class AddDbTest {
         DeleteDb.callDb(DBValidator.getCon(), newContact);
 
     }
+
 
 }
