@@ -5,6 +5,7 @@ package contacthandling;
  * run tests where you make a contact or you check for contact info entry in right format
  */
 
+import databasehandling.DbHandler;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -14,10 +15,9 @@ class ContactCreateTest {
     @Test
     public void createAContactWithCommonValuesForAContact() {
         try {
-            new Contact(999, "Bob", "L.","0736262671", "Address1","bobfripostorg");
-
-        } catch (Exception e) {
+            new Contact(DbHandler.getInstance().generateID(), "Bob", "L.","0736262671", "Address1","bobfripostorg");
             fail ("Exception was expected for mejl address...");
+        } catch (Exception e) {
             System.err.println("Exception: " + e);
         }
     }
@@ -25,21 +25,19 @@ class ContactCreateTest {
     @Test
     public void makeSureContactFirstNameIsNotEmpty() {
         try {
-            new Contact(999, "", "L.","0736262671", "Address1","bob@fripost.org");
-
-        } catch (Exception e) {
+            new Contact(DbHandler.getInstance().generateID(), "", "L.","0736262671", "Address1","bob@fripost.org");
             fail("Exception was expected for empty first name");
+        } catch (Exception e) {
             System.err.println("Exception: " + e);
         }
     }
 
     @Test
-    void makeSureContactLastNameNotEmpty() {
+    void makeSureContactLastNameNotNull() {
         try {
-            new Contact(999, "Bob", "Gunnarsson","0736262671", "Address1","bob@fripost.org");
-
-        } catch (Exception e) {
+            new Contact(DbHandler.getInstance().generateID(), "Bob", "","0736262671", "Address1","bob@fripost.org");
             fail("Exception was expected for empty last name");
+        } catch (Exception e) {
             System.err.println("Exception: " + e);
         }
     }
@@ -47,10 +45,9 @@ class ContactCreateTest {
     @Test
     void seeThatPhoneNumberIsInCorrectFormat() {
         try {
-            new Contact(999, "Bob", "Lotfabadi","071234567", "Address1","bob@fripost.org");
-
-        } catch (Exception e) {
+            new Contact(DbHandler.getInstance().generateID(), "Bob", "","071", "Address1","bob@fripost.org");
             fail("Exception was expected for short phone numbers");
+        } catch (Exception e) {
             System.err.println("Exception: " + e);
         }
     }

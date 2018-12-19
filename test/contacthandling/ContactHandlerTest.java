@@ -47,8 +47,8 @@ public class ContactHandlerTest {
     }
 
     @Test
-    public void addAContactAndDisplayTheContactList() {
-        Contact contact1 = new Contact(121,"Bob", "Lotfabadi",
+    public void addAContactAndDisplayTheContactList() throws Exception {
+        Contact contact1 = new Contact(999,"Bob", "Lotfabadi",
                 "12345", "Södra Klöverstigen 33", "bob@.se");
 
         ContactHandler contacList1 = ContactHandler.getInstance();
@@ -95,13 +95,13 @@ public class ContactHandlerTest {
 
 
     @Test
-    public void AddToTheContactListViaAddingToDatabaseAndReturnContactList() {
+    public void AddToTheContactListViaAddingToDatabaseAndReturnContactList() throws Exception {
         ContactHandler contactHandler = ContactHandler.getInstance();
         DBValidator dbValidator = new DBValidator();
         //DbHandler dbHandler=DbHandler.getInstance();
 
         System.out.println("first, make a contact...");
-        Contact contact1 = new Contact(122,"Bob", "Lotfabadi",
+        Contact contact1 = new Contact(DbHandler.getInstance().generateID(),"Bob", "Lotfabadi",
                 "12345", "Södra Klöverstigen 33", "bob@.se");
 
         System.out.println("add a contact to database...");
