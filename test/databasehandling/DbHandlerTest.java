@@ -60,11 +60,17 @@ class DbHandlerTest {
     }
 
 
+    /**
+     * Asserts that DbHandler.getInstance returns an object of class DbHandler.
+     */
     @Test
     void getInstance() {
         assertEquals(DbHandler.class, DbHandler.getInstance().getClass());
     }
 
+    /**
+     * Asserts that DbHandler.add throws exception when something went wrong.
+     */
     @Test
     void AssertDBHandlerAddThrowsExceptionWhenFailing() {
         String response= "";
@@ -77,6 +83,10 @@ class DbHandlerTest {
         }
         assertEquals("Couldn't add Contact in database", response );
     }
+
+    /**
+     * Asserts that DbHandler.delete throws exception when something went wrong.
+     */
     @Test
     void AssertDBHandlerDeleteThrowsExceptionWhenFailing() {
         String response= "";
@@ -90,6 +100,9 @@ class DbHandlerTest {
         assertEquals("Couldn't delete Contact in database", response );
     }
 
+    /**
+     * Asserts that DbHandler.update throws exception when something went wrong.
+     */
     @Test
     void AssertDBHandlerUpdateThrowsExceptionWhenFailing() {
         String response= "";
@@ -103,6 +116,9 @@ class DbHandlerTest {
         assertEquals("Couldn't update Contact in database.", response );
     }
 
+    /**
+     * Asserts that DbHandler.searchPage throws exception when something went wrong.
+     */
     @Test
     void AssertDBHandlerSearchPageThrowsExceptionWhenFailing() {
 
@@ -131,6 +147,10 @@ class DbHandlerTest {
     void previousPage() {
     }
 
+    /**
+     * Asserts that DbHandler.generateID throws exception when something went wrong.
+     * also tests KeyGenerator.
+     */
     @Test
     void AssertDBHandlerGenerateIDThrowsExceptionWhenFailing() {
         String response= "";
@@ -142,7 +162,9 @@ class DbHandlerTest {
         assertEquals("Couldnt Generate ID.", response );
     }
 
-
+    /**
+     * Asserts that DbHandler.getSearchString returns the the last inparam used in DbHandler.searchPage.
+     */
     @Test
     void AssertgetSearchStringReturnsLatestSearchString() {
         String searchString = "Expected Result";
