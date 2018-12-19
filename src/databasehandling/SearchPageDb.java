@@ -90,7 +90,7 @@ public class SearchPageDb {
                         " resultSet: " + resultSet);
 
 
-                //TODO: KOLLA OM DENNA FUNGERAR
+
                 hitAmount = 0;
                 while (resultSet.next()) {
                     System.out.println("- row id: " + resultSet.getInt("id"));
@@ -123,11 +123,11 @@ public class SearchPageDb {
                         "phone LIKE '%"+ searchString +"%' OR "+
                         "address LIKE '%"+ searchString +"%' OR "+
                         "email LIKE '%"+ searchString +"%' "+
-                        "ORDER BY firstname COLLATE NOCASE " +          // TODO Fatta varför COLLATE fungerar!
+                        "ORDER BY firstname COLLATE NOCASE " +
                         "LIMIT " + hitsPerpage + " " +
-                        "OFFSET " + ((pageNumber-1)*hitsPerpage) + //check if this formular is right
+                        "OFFSET " + ((pageNumber-1)*hitsPerpage) +
                         ";";
-               // System.out.println(query); // Säkra att du skrivit rätt, tas bort senare.
+
                 stm = connection.createStatement();
                 resultSet = stm.executeQuery(query);
                 System.out.println("- now in callDb(). resultSet: " + resultSet);

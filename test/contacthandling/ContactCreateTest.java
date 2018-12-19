@@ -15,9 +15,9 @@ class ContactCreateTest {
     @Test
     public void createAContactWithCommonValuesForAContact() {
         try {
-            new Contact(DbHandler.getInstance().generateID(), "Bob", "L.","0736262671", "Address1","bobfripostorg");
-            fail ("Exception was expected for mejl address...");
+            new Contact(65657615, "Bob", "Lotfabadi","0736262671", "Address1","bobfripostorg");
         } catch (Exception e) {
+            fail ("Exception was expected for mejl address...");
             System.err.println("Exception: " + e);
         }
     }
@@ -25,9 +25,9 @@ class ContactCreateTest {
     @Test
     public void makeSureContactFirstNameIsNotEmpty() {
         try {
-            new Contact(DbHandler.getInstance().generateID(), "", "L.","0736262671", "Address1","bob@fripost.org");
-            fail("Exception was expected for empty first name");
+            new Contact(76543847, "Joel", "Gunnarson","0736262671", "Address1","bob@fripost.org");
         } catch (Exception e) {
+            fail("Exception was expected for empty first name");
             System.err.println("Exception: " + e);
         }
     }
@@ -35,9 +35,9 @@ class ContactCreateTest {
     @Test
     void makeSureContactLastNameNotNull() {
         try {
-            new Contact(DbHandler.getInstance().generateID(), "Bob", "","0736262671", "Address1","bob@fripost.org");
-            fail("Exception was expected for empty last name");
+            new Contact(9189865, "Bob", "Lotfabadi","0736262671", "Address1","bob@fripost.org");
         } catch (Exception e) {
+            fail("Exception was expected for empty last name");
             System.err.println("Exception: " + e);
         }
     }
@@ -45,9 +45,9 @@ class ContactCreateTest {
     @Test
     void seeThatPhoneNumberIsInCorrectFormat() {
         try {
-            new Contact(DbHandler.getInstance().generateID(), "Bob", "","071", "Address1","bob@fripost.org");
-            fail("Exception was expected for short phone numbers");
+            new Contact(6790786, "Bob", "Lotfabadi","07123456712", "Address1","bob@fripost.org");
         } catch (Exception e) {
+            fail("Exception was expected for short phone numbers");
             System.err.println("Exception: " + e);
         }
     }
