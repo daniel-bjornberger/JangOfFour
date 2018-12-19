@@ -15,7 +15,7 @@ class UpdateDbTest {
 
         Contact contact= null;
         try {
-            contact = new Contact(DbHandler.getInstance().generateID(),"Joel","Gunnarsson","070","Ring","joel@se");
+            contact = new Contact(DbHandler.getInstance().generateID(),"Joel","Gunnarsson","07044515487","Ring","joel@hot.se");
         } catch (Exception e) {
             e.printStackTrace();
             fail();

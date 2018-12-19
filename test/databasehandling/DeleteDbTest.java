@@ -16,7 +16,7 @@ class DeleteDbTest {
 
         Contact contact= null;
         try {
-            contact=new Contact(DbHandler.getInstance().generateID(),"Adam","Sundström","098098098","Ringvägen","joel@hotmail.com");
+            contact=new Contact(DbHandler.getInstance().generateID(),"Adam","Sundström","09809458098","Ringvägen","joel@hotmail.com");
         } catch (Exception e){
             System.out.println(e.getMessage());
             fail("Could not create Contact, Test Failed");
