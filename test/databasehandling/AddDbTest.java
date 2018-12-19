@@ -11,34 +11,36 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 class AddDbTest {
 
+    /** After all tests have been performed, the connection to the database is closed.
+     */
     @AfterAll
     static void breakdown(){
         DBValidator.closeConnection();
     }
 
 
+    /** Tests if a new contact can be added to the database. Afterwards, the contact is deleted from the database.
+     */
     @Test
-    void testCallDbAddContactSuccess() throws Exception {
+    void testCallDbAddContactSuccess() {
 
         DBValidator dbValidator = new DBValidator();
 
-        Contact newContact = new Contact(DbHandler.getInstance().generateID(), "Joel","Gunnarsson","098","Ringvägen","joel@hotmail.com");
+        Contact newContact = new Contact(-845, "Joel","Gunnarsson","09888888888","Ringvägen","joel@hotmail.com");
 
         assertTrue(AddDb.callDb(DBValidator.getCon(), newContact));
 
-
-
-        if(DeleteDb.callDb(DBValidator.getCon(), newContact)){
-            System.out.println("Delete ok!");
-        }
+        DeleteDb.callDb(DBValidator.getCon(), newContact);
 
     }
 
 
+    /** Tests that it isn't possible to add the same contact twice. Afterwards, the contact is deleted from the database.
+     */
     @Test
-    void testCallDbAddContactFail() throws Exception {
+    void testCallDbAddContactFail() {
 
-        Contact newContact = new Contact(-845, "Joel","Gunnarsson","098","Ringvägen","joel@hotmail.com");
+        Contact newContact = new Contact(-845, "Joel","Gunnarsson","09888888888","Ringvägen","joel@hotmail.com");
 
         AddDb.callDb(DBValidator.getCon(), newContact);
 
