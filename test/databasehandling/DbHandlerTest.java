@@ -75,7 +75,7 @@ class DbHandlerTest {
     void AssertDBHandlerAddThrowsExceptionWhenFailing() {
         String response= "";
         Contact contact=new Contact(-1, "TEST9999",
-                "TEST", "TEST", "TEST", "TEST");
+                "TEST", "123456789", "TESTRoad 7", "TEST@test.com");
         try {
             DbHandler.getInstance().add(contact);
         } catch (Exception e) {
@@ -91,7 +91,7 @@ class DbHandlerTest {
     void AssertDBHandlerDeleteThrowsExceptionWhenFailing() {
         String response= "";
         Contact contact=new Contact(-1, "TEST9999",
-                "TEST", "TEST", "TEST", "TEST");
+                "TEST", "123456789", "TestRoad 9", "TEST@Test.com");
         try {
             DbHandler.getInstance().delete(contact);
         } catch (Exception e) {
@@ -107,7 +107,7 @@ class DbHandlerTest {
     void AssertDBHandlerUpdateThrowsExceptionWhenFailing() {
         String response= "";
         Contact contact=new Contact(-1,"TEST9999",
-                "TEST", "TEST", "TEST", "TEST");
+                "TEST", "123456789", "TEST 6", "TEST@test.com");
         try {
             DbHandler.getInstance().update(contact);
         } catch (Exception e) {
