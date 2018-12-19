@@ -26,22 +26,21 @@ public class DbHandler {
     private DbHandler(){}
 
 
-    /**
-     * @return how many pages of searchresults there is of the last searchquery.
+
+
+    /**Use to access DBhandler
+     * @return the singleton instance of DbHandler
      */
-    public int getPageAmount(){
-        if (hitsPerpage%hitsPerpage <0){
-        return (hitAmount/hitsPerpage +1);
-        }else{
-            return hitAmount/hitsPerpage;
-        }
-    }
-    /**Use to access DBhandler*/
     public static DbHandler getInstance(){
         return DbHandlerInstance;
         }
 
-    //*Adds Contact to database*/
+
+    /**Adds Contact to database
+     * @param contact contains info about the contact to add to the database.
+     * Make sure the contact used Keygenerator.CallDb() to generate ID.
+     * @throws Exception if anything went wrong.
+     */
     public void add(Contact contact)throws Exception{
         if (AddDb.callDb(DBValidator.getCon(), contact)==true){
             searchPage(searchString);
@@ -49,7 +48,11 @@ public class DbHandler {
             throw new Exception("Couldn't add Contact in database");
         }
     }
-    /**Deletes contact from database, and does a new search afterwards. */
+
+    /**Deletes contact from database, and does a new search afterwards.
+     * @param contact contains the ID Primary Key for the contact to delete from database.
+     * @throws Exception if anything went wrong.
+     */
     public void delete(Contact contact)throws Exception{
         if (DeleteDb.callDb(DBValidator.getCon(), contact)==true){
             searchPage(searchString);
@@ -58,9 +61,13 @@ public class DbHandler {
         }
     }
 
+
     /**Calls UpdateDb.CallDb()
-     * Calls searchPage()*/
-    public void update(Contact contact)throws Exception{
+     * Calls searchPage()
+     * @param contact contains ID Primary Key and new info for the database.
+     * @throws Exception if anything went wrong.
+     */
+        public void update(Contact contact)throws Exception{
 
         if (UpdateDb.callDb(DBValidator.getCon(), contact)==true){
             searchPage(searchString);
@@ -68,15 +75,18 @@ public class DbHandler {
             throw new Exception("Couldn't update Contact in database.");
         }
     }
+
     /**Sets pagenumber to 1.
-     * Calls SearchPagedb.CallDb() and adds results in ContactHandler.contactList*/
+     * Calls SearchPagedb.CallDb() and adds results in ContactHandler.contactList
+     * @param searchString for SearchPageDb to create query from.
+     * @throws Exception
+     */
     public void searchPage(String searchString) throws Exception {
         this.searchString = searchString;
         pagenumber=1;
         if  (SearchPageDb.getInstance().callDb(DBValidator.getCon(), searchString, pagenumber, hitsPerpage)) {
             //is sending empty resultset:
             ContactHandler.getInstance().createFromString(SearchPageDb.getInstance().getResultSet());
-            //hitAmount = SearchPageDb.getInstance().getHitAmount();
             //SearchPageDb.getInstance().getResultSet()
             //System.out.println("resultset: " +
             //        );
@@ -86,30 +96,9 @@ public class DbHandler {
         }
 
     }
-    /**Updates pagenumber.
-     * calls SearchPageDb.Calldb and adds results in ContactHandler.contactList. */
-    public void nextPage(Contact contact) throws Exception{
-        pagenumber++;
-        if (SearchPageDb.getInstance().callDb(DBValidator.getCon(), searchString, pagenumber, hitsPerpage)==true){
-            ContactHandler.getInstance().createFromString(SearchPageDb.getInstance().getResultSet());
 
-        }else {
-            throw new Exception("Couldn't search Contacts.");
-        }
-    }
 
-    /**Updates pagenumber.
-     * calls SearchPageDb.Calldb and adds results in ContactHandler.contactList.
-     * @throws Exception if anything went wrong with the database.
-     */
-    public void previousPage() throws Exception{
-        pagenumber--;
-        if (SearchPageDb.getInstance().callDb(DBValidator.getCon(), searchString, pagenumber, hitsPerpage)==true){
-            ContactHandler.getInstance().createFromString(SearchPageDb.getInstance().getResultSet());
-        }else {
-            throw new Exception("Couldn't search Contacts.");
-        }
-    }
+
     /**Calls Keygenerator.callDB and returns a ID not used in the database.*/
     public int generateID()throws Exception{
         int result = KeyGenerator.callDB(DBValidator.getCon());
@@ -118,6 +107,9 @@ public class DbHandler {
         }else throw new Exception("Couldnt Generate ID.");
     }
 
+    /**
+     * @return the latest used search string
+     */
     public String getSearchString() {
         return searchString;
     }

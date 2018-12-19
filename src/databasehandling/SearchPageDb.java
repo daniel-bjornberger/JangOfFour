@@ -39,9 +39,6 @@ public class SearchPageDb {
     }
     //*Makes sure class is Singleton*/
     private SearchPageDb(){}
-    public int getHitAmount(){
-        return hitAmount;
-    }
 
     /**
      * @return the singleton instance of the class.

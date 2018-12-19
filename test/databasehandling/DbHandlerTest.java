@@ -117,10 +117,16 @@ class DbHandlerTest {
     }
 
 
+    /**
+     * @deprecated
+     */
     @Test
     void nextPage() {
     }
 
+    /**
+     * @deprecated
+     */
     @Test
     void previousPage() {
     }
@@ -136,7 +142,15 @@ class DbHandlerTest {
         assertEquals("Couldnt Generate ID.", response );
     }
 
+
     @Test
-    void getSearchString() {
+    void AssertgetSearchStringReturnsLatestSearchString() {
+        String searchString = "Expected Result";
+        try {
+            DbHandler.getInstance().searchPage(searchString);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        assertEquals(DbHandler.getInstance().getSearchString(), searchString);
     }
 }
