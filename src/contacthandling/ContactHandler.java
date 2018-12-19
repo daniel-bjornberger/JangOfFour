@@ -82,7 +82,7 @@ public class ContactHandler implements Observable {
         //System.out.println("Cleared contact list");
     }
 
-    // TODO
+
     public void notifyListeners(){
         invalidationlisteners.forEach( (i) -> i.invalidated(this));
 

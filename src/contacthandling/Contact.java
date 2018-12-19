@@ -22,7 +22,6 @@ public class Contact {
         this.id=id;
         setFirstname(givenFirstName);
         setLastname(givenLastName);
-        //this.phone = givenPhone;
         setPhone(givenPhone);
         setAddress(givenAddress);
         setEmail(givenEmail);
