@@ -19,7 +19,7 @@ The graphical user interface is intuitive and easy to manage:
 1. Search Contacts by typing in the search term
 2. List all contacts by clicking the "List all contacts" button
 3. Add new contact by clicking the "Add new contact" button
-	which takes you to the "Add contact" view
+   which takes you to the "Add contact" view
 4. Update a contact by clicking a contact name and
 	clicking the "Update Contact". The program takes you to
 	to the "Update contact" view where use can update contact details.
@@ -31,11 +31,11 @@ The graphical user interface is intuitive and easy to manage:
 Some Technical details
 ------------------------
 
-> Singleton design is used for handling of instances in the program.
-	Singleton class is used for contacthandling, databasehandling
+> Singleton design pattern is used for handling of instances in the program.
+  This class is used for contacthandling and the databasehandling
 
 > The program is mainly divided into three packages:
-contacthandling, databasehandling, userinterface.
+  contacthandling, databasehandling, userinterface.
 
 > The database is an integrated Sqlite3 file.
   Contact handling happens after database connection is made with the database.
