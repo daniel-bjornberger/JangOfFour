@@ -3,6 +3,22 @@
 Running the program
 ------------------------
 
+Please download and run our script "jangoffourscript.sh" to download,compile and run the appliction. The scipt can be found in this repository. 
+
+If preferred you can use commands below instead of run and download script.
+
+ 
+repository="https://github.com/daniel-bjornberger/JangOfFour.git"
+dir=JangOfFour
+mkdir -p "$dir"
+git clone "$repository" "$dir/"
+cd "$dir"
+mvn clean package
+cp src/main/java/userinterface/ListOfContactsView.FXML target/classes/userinterface
+cp src/main/java/userinterface/ContactView.FXML target/classes/userinterface
+cp src/main/java/userinterface/style.css target/classes/userinterface
+mvn exec:java -Dexec.mainClass="userinterface.ContactListMain"
+
 
 
 
