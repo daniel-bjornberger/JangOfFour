@@ -36,7 +36,7 @@ class AddDbTest {
     @Test
     void testCallDbAddContactFail() throws Exception {
 
-        Contact newContact = new Contact(DbHandler.getInstance().generateID(), "Joel","Gunnarsson","098","Ringvägen","joel@hotmail.com");
+        Contact newContact = new Contact(-845, "Joel","Gunnarsson","098","Ringvägen","joel@hotmail.com");
 
         AddDb.callDb(DBValidator.getCon(), newContact);
 

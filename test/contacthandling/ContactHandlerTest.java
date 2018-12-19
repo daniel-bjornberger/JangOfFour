@@ -48,7 +48,7 @@ public class ContactHandlerTest {
 
     @Test
     public void addAContactAndDisplayTheContactList() throws Exception {
-        Contact contact1 = new Contact(DbHandler.getInstance().generateID(),"Bob", "Lotfabadi",
+        Contact contact1 = new Contact(999,"Bob", "Lotfabadi",
                 "12345", "Södra Klöverstigen 33", "bob@.se");
 
         ContactHandler contacList1 = ContactHandler.getInstance();
