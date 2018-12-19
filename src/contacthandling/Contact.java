@@ -19,8 +19,6 @@ public class Contact {
     public Contact (int id,String givenFirstName, String givenLastName,
                     String givenPhone, String givenAddress,
                     String givenEmail) {
-
-        System.out.println("Contact id: " + this.id);
         this.id=id;
         setFirstname(givenFirstName);
         setLastname(givenLastName);
@@ -51,7 +49,7 @@ public class Contact {
     public void setFirstname(String firstName) {
         //check first name not empty:
         if (firstName.length() <= 1) {
-            System.err.println("ignored error: First name should be more than one character");
+            //System.err.println("ignored error: First name should be more than one character");
             //throw new IllegalArgumentException();
         }
         this.firstname = firstName;
@@ -66,7 +64,7 @@ public class Contact {
     public void setLastname(String lastName) {
         //check last name not empty:
         if (lastName.length() <= 1) {
-            System.err.println("ignored error: Last name shoud be more than one character");
+            //System.err.println("ignored error: Last name shoud be more than one character");
             //throw new IllegalArgumentException();
         }
         this.lastname = lastName;
@@ -81,7 +79,7 @@ public class Contact {
     public void setPhone(String phone) {
         //check to see that phone number has 9 or more characters
         if (phone.length() < 9) {
-            System.err.println("ignored error: Phone number must have 9 or mor digits ");
+            //System.err.println("ignored error: Phone number must have 9 or mor digits ");
             //throw new IllegalArgumentException();
         }
         this.phone = phone;
@@ -96,7 +94,7 @@ public class Contact {
     public void setAddress(String address) {
         //check to see that address has 5 or more characters
         if (address.length() < 5) {
-            System.err.println("ignored error: Address must have 5 or mor characters ");
+            //System.err.println("ignored error: Address must have 5 or mor characters ");
             //throw new IllegalArgumentException();
         }
         this.address = address;
@@ -111,12 +109,12 @@ public class Contact {
     public void setEmail(String email) {
         //check email format: @ sign:
         if (!email.contains("@")) {
-            System.err.println("ignored error: Email must include @ sign.");
+            //System.err.println("ignored error: Email must include @ sign.");
             //throw new IllegalArgumentException();
         }
         //check email format: dot:
         if (!email.contains(".")) {
-            System.err.println("ignored error: Email must include a dot for domain name.");
+            //System.err.println("ignored error: Email must include a dot for domain name.");
             //throw new IllegalArgumentException();
         }
 
