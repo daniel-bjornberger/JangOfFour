@@ -3,7 +3,7 @@
 Running the program
 ------------------------
 
-Please download and run our script "jangoffourscript.sh" to download,compile and run the appliction. The scipt can be found in this repository. 
+Please download and run our script "jangoffourscript.sh" to download,compile and run the appliction. The script can be found in this repository. 
 
 If preferred you can use commands below instead of run and download script.
 
