@@ -51,7 +51,6 @@ public class DBValidator {
         if ( con!= null) {
             try {
                 con.close();
-                System.out.println("Connection closed");
 
             } catch (SQLException e) {
                 e.printStackTrace();
