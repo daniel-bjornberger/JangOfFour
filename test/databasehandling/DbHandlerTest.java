@@ -35,7 +35,6 @@ class DbHandlerTest {
             }
         File file = new File("Database1");
         if(file.delete()){
-            System.out.println("DataBase1 Deleted");
         }
     }
 
@@ -47,10 +46,8 @@ class DbHandlerTest {
 
         File file = new File("Database1");
         File fileBackup = new File("DatabaseBackup");
-        System.out.print("Change name 'DatabaseBackup to Database1: ");
 
            if(fileBackup.renameTo(file)) {
-               System.out.println("DatabaseBackup renamed to Database1");
            }
 
     }

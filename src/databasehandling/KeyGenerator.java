@@ -24,12 +24,10 @@ public abstract class KeyGenerator {
                 String query = "SELECT * FROM contacts " +
                         "ORDER BY id desc " +
                         "LIMIT 1;";
-                System.out.println(query); // Säkra att du skrivit rätt, tas bort senare.
                 stm = connection.createStatement();
                 resultSet = stm.executeQuery(query);
                 if (resultSet.next()){
                     int resultInt = resultSet.getInt("id");
-                    System.out.println("RESULT FROM database:" + resultInt);
                     return (resultInt+1);
                 }
                 return (1);
