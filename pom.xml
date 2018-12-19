@@ -20,14 +20,7 @@
                         <goals>
                             <goal>run</goal>
                         </goals>
-                        <configuration>
-                            <tasks>
-                                <echo>Using env.test.properties</echo>
-                                <copy file="style.css" tofile="${basedir}/target/Classes/userinterface/style.css"/>
-                                <copy file="ContactView.fxml" tofile="${basedir}/target/Classes/userinterface/ContactView.fxml"/>
-                                <copy file="ListOfContactsView.fxml" tofile="${basedir}/target/Classes/userinterface/ListOfContactsView.fxml"/>
-                            </tasks>
-                        </configuration>
+
                     </execution>
                 </executions>
             </plugin>
